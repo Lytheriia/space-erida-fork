@@ -984,7 +984,7 @@
 
 #Deathsquad Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  parent: [ BaseCentcommContraband, ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ] #Erida add flashlight
   id: ClothingHeadHelmetHardsuitDeathsquad
   name: deathsquad hardsuit helmet
   description: A robust helmet for special operations.
@@ -1008,10 +1008,12 @@
         Heat: 0.80
         Radiation: 0.80
         Caustic: 0.95
-  - type: PointLight #Erida
+  #Erida tweaks
+  - type: PointLight
     color: '#4ac4ff'
     radius: 7
     energy: 3
+  #Erida tweaks end
 
 #MISC. HARDSUITS
 #Clown Hardsuit
