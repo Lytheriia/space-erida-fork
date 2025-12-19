@@ -69,9 +69,11 @@
   recipes:
   - BiofabricatorMachineCircuitboard
   - FatExtractorMachineCircuitboard
-  - HydroponicsTrayMachineCircuitboard 
-  - SeedExtractorMachineCircuitboard 
   - MassMediaCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
   - JukeboxCircuitBoard
   - DawInstrumentMachineCircuitboard
+  # Erida-start
+  - HydroponicsTrayMachineCircuitboard
+  - SeedExtractorMachineCircuitboard
+  # Erida-end

@@ -51,6 +51,11 @@
   - MagazineRifleEmpty
   - SpeedLoaderMagnum
   - SpeedLoaderMagnumEmpty
+  # Erida-start
+  - MagazineShotgun
+  - MagazineShotgunSlug
+  - MagazineShotgunEmpty
+  # Erida-end
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
