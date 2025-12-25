@@ -191,7 +191,6 @@ public sealed partial class DetailExaminableWindow : FancyWindow
             PreviewNSFWLinksContainer?.RemoveAllChildren(); // Erida edit
         }
 
-        Badge.Visible = PlayerBadge();
     }
 
     private static string GetContentWithEmptyMessage(string content, string emptyMessageKey)
@@ -352,7 +351,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
             : playerName;
 
         var ckeyLower = ckeyToMatch.ToLowerInvariant();
-        var grantedCKeys = new[] { "puroslavking" };
+        var grantedCKeys = new[] { "" };
 
         return grantedCKeys.Contains(ckeyLower);
     }

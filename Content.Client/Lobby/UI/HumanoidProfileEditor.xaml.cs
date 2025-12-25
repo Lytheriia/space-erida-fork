@@ -540,7 +540,6 @@ namespace Content.Client.Lobby.UI
                 _linksTextEdit = _flavorText.CLinksTextInput;
                 _nsfwTextEdit = _flavorText.CNSFWTextInput;
 
-                UpdateFlavorPreview();
                 // Orion-End
 
                 _flavorText.OnFlavorTextChanged += OnFlavorTextChange;
@@ -614,18 +613,6 @@ namespace Content.Client.Lobby.UI
         {
             if (_flavorText == null)
                 return;
-
-            if (_flavorText.PreviewOOCText.Visible == !showNsfw)
-                return;
-
-            _flavorText!.PreviewOOCText.Visible = !showNsfw;
-            _flavorText!.PreviewNSFWOOCText.Visible = showNsfw;
-
-            _flavorText!.PreviewLinksContainer.Visible = !showNsfw;
-            _flavorText!.PreviewNSFWLinksContainer.Visible = showNsfw;
-
-            _flavorText!.PreviewTagsText.Visible = !showNsfw;
-            _flavorText!.PreviewNSFWTagsText.Visible = showNsfw;
         }
         private void OnTabChanged(int tab)
         {
@@ -642,64 +629,6 @@ namespace Content.Client.Lobby.UI
         // Erida end
 
         // Orion-Start
-        private void UpdateFlavorPreview()
-        {
-            if (_flavorText == null || Profile == null)
-                return;
-
-            _flavorText.PreviewAppearanceText.SetMessage(Profile.FlavorText);
-            _flavorText.PreviewTraitsText.SetMessage(Profile.CharacterFlavorText);
-            _flavorText.PreviewOOCText.SetMessage(Profile.OOCFlavorText);
-            _flavorText.PreviewTagsText.Text = Profile.TagsFlavorText;
-
-            // Erida edit start
-            _flavorText.PreviewNSFWOOCText.SetMessage(Profile.NSFWOOCFlavorText);
-            _flavorText.PreviewNSFWTagsText.Text = Profile.NSFWTagsFlavorText;
-            ProcessLinks(Profile.LinksFlavorText, _flavorText.PreviewLinksContainer);
-            ProcessLinks(Profile.NSFWLinksFlavorText, _flavorText.PreviewNSFWLinksContainer);
-            // Erida end
-
-            _flavorText.PreviewGYRContainer.RemoveAllChildren();
-            CreateGYRBigTextLabel(Loc.GetString($"humanoid-profile-editor-gyr-green"), Color.Green);
-            CreateGYRTextLabel(Profile.GreenFlavorText);
-            CreateGYRBigTextLabel(Loc.GetString($"humanoid-profile-editor-gyr-yellow"), Color.Yellow);
-            CreateGYRTextLabel(Profile.YellowFlavorText);
-            CreateGYRBigTextLabel(Loc.GetString($"humanoid-profile-editor-gyr-red"), Color.Red);
-            CreateGYRTextLabel(Profile.RedFlavorText);
-
-            _flavorText.PreviewNSFWText.SetMessage(Profile.NSFWFlavorText);
-
-            var species = string.IsNullOrEmpty(Profile.CustomSpecies) ? Loc.GetString($"species-name-{Profile.Species.ToString().ToLower()}") : Profile.CustomSpecies; // Erida
-            var sex = Loc.GetString($"humanoid-profile-editor-sex-{Profile.Sex.ToString().ToLower()}-text");
-            var gender = Loc.GetString($"humanoid-profile-editor-pronouns-{Profile.Gender.ToString().ToLower()}-text");
-
-            _flavorText.PreviewNameText.Text = Profile.Name;
-            _flavorText.PreviewGenderText.Text = $"{species} | {sex} | {gender}";
-        }
-
-        private void CreateGYRBigTextLabel(string text, Color color)
-        {
-            var label = new Label
-            {
-                Text = text,
-                VerticalExpand = true,
-                StyleClasses = { StyleNano.StyleClassLabelBig },
-                FontColorOverride = color,
-            };
-
-            _flavorText?.PreviewGYRContainer.AddChild(label);
-        }
-
-        private void CreateGYRTextLabel(string text)
-        {
-            var label = new RichTextLabel
-            {
-                Text = text + "\n",
-                VerticalExpand = true,
-            };
-
-            _flavorText?.PreviewGYRContainer.AddChild(label);
-        }
 
         private void ProcessLinks(string linksText, BoxContainer linksContainer)
         {
@@ -1027,10 +956,6 @@ namespace Content.Client.Lobby.UI
             SpriteView.SetEntity(PreviewDummy);
             _entManager.System<MetaDataSystem>().SetEntityName(PreviewDummy, Profile.Name);
 
-            // Orion-Start
-            _flavorText?.TargetPreview.SetEntity(PreviewDummy);
-            // Orion-End
-
             // Check and set the dirty flag to enable the save/reset buttons as appropriate.
             SetDirty();
         }
@@ -1057,7 +982,7 @@ namespace Content.Client.Lobby.UI
 
             UpdateNameEdit();
             UpdateFlavorTextEdit();
-            UpdateFlavorPreview(); // Orion
+             // Orion
             UpdateSexControls();
             UpdateGenderControls();
             UpdateSkinColor();
@@ -1379,7 +1304,6 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithFlavorText(content);
             SetDirty();
 
-            UpdateFlavorPreview(); // Orion
         }
 
         // Orion-Start
@@ -1391,7 +1315,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithOOCFlavorText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnCharacterFlavorTextChange(string content)
@@ -1402,7 +1326,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithCharacterText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnGreenFlavorTextChange(string content)
@@ -1413,7 +1337,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithGreenPreferencesText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnYellowFlavorTextChange(string content)
@@ -1424,7 +1348,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithYellowPreferencesText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnRedFlavorTextChange(string content)
@@ -1435,7 +1359,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithRedPreferencesText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnTagsFlavorTextChange(string content)
@@ -1446,7 +1370,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithTagsText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnLinksFlavorTextChange(string content)
@@ -1457,7 +1381,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithLinksText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnNSFWFlavorTextChange(string content)
@@ -1468,7 +1392,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithNSFWPreferencesText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
         // Orion-End
         // Erida start
@@ -1480,7 +1404,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithNSFWOOCFlavorText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnNSFWLinksFlavorTextChange(string content)
@@ -1491,7 +1415,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithNSFWLinksText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
 
         private void OnNSFWTagsFlavorTextChange(string content)
@@ -1502,7 +1426,7 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithNSFWTagsText(content);
             SetDirty();
 
-            UpdateFlavorPreview();
+
         }
         // Erida end
 

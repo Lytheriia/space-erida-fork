@@ -40,12 +40,6 @@ namespace Content.Client.FlavorText
             FlavorTabs.SetTabTitle(3, Loc.GetString("flavor-tab-gyr"));
             FlavorTabs.SetTabTitle(4, Loc.GetString("flavor-tab-nsfw"));
             FlavorTabs.SetTabTitle(5, Loc.GetString("flavor-tab-nsfw-ooc-flavor")); // Erida edit
-            FlavorTabs.SetTabTitle(6, Loc.GetString("flavor-tab-preview"));
-
-            PreviewTabs.SetTabTitle(0, Loc.GetString("flavor-tab-flavor"));
-            PreviewTabs.SetTabTitle(1, Loc.GetString("flavor-tab-character"));
-            PreviewTabs.SetTabTitle(2, Loc.GetString("flavor-tab-gyr"));
-            PreviewTabs.SetTabTitle(3, Loc.GetString("flavor-tab-nsfw"));
 
             CFlavorTextInput.Placeholder = new Rope.Leaf(loc.GetString("flavor-text-placeholder"));
             CFlavorTextInput.OnTextChanged += _ => FlavorTextChanged();
@@ -83,8 +77,6 @@ namespace Content.Client.FlavorText
 
             CNSFWTagsTextInput.Placeholder = new Rope.Leaf(loc.GetString("tags-flavor-text-placeholder"));
             CNSFWTagsTextInput.OnTextChanged += _ => NSFWTagsTextChanged();
-
-            PreviewTabs.OnTabChanged += FlavorTabChanged;
             // Erida end
         }
 
