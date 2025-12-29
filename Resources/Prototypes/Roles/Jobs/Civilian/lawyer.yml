@@ -5,7 +5,9 @@
   playTimeTracker: JobLawyer
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 2.5h
+      # Erida-start
+      time: 5h #2.5h
+      # Erida-end
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-hop

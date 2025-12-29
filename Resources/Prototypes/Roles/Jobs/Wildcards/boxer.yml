@@ -9,6 +9,11 @@
   access:
   - Service
   - Maintenance
+  # Erida-start
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 5h
+  # Erida-end
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay

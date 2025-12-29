@@ -3,9 +3,11 @@
   name: job-name-technical-assistant
   description: job-description-technical-assistant
   playTimeTracker: JobTechnicalAssistant
+  # Erida-start
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 1h
+      time: 5h
+  # Erida-end
         # Erida-start
     # - !type:DepartmentTimeRequirement
     #   department: Engineering
