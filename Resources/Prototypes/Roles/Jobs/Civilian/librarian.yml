@@ -6,6 +6,11 @@
   startingGear: LibrarianGear
   icon: "JobIconLibrarian"
   supervisors: job-supervisors-hop
+  # Erida-start
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 5h
+  # Erida-end
   access:
   - Service
   - Maintenance
@@ -13,7 +18,7 @@
   - !type:AddComponentSpecial
     components:
     - type: UniversalLanguageSpeaker
-    
+
 - type: startingGear
   id: LibrarianGear
   equipment:

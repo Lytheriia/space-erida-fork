@@ -6,8 +6,10 @@
   startingGear: PassengerGear
   icon: "JobIconPassenger"
   supervisors: job-supervisors-everyone
-  access:
-  - Maintenance
+  # Erida-start
+  #access:
+  #- Maintenance
+  # Erida-end
 
 - type: startingGear
   id: PassengerGear

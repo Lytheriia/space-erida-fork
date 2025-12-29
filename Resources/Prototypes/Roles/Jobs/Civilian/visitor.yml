@@ -7,6 +7,11 @@
   icon: JobIconVisitor
   setPreference: false
   overrideConsoleVisibility: true
+  # Erida-start
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 5h
+  # Erida-end
   access:
   - Maintenance
   extendedAccess:
