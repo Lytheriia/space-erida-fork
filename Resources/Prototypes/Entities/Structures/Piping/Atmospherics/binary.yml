@@ -632,6 +632,7 @@
   - type: GuideHelp
     guides:
     - Radiators
+  - type: ExplodeByPressure # Erida
 
 - type: entity
   parent: HeatExchanger
