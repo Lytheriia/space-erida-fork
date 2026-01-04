@@ -5,5 +5,5 @@ namespace Content.Server._Erida.Atmos.ExplodeByPressure;
 public sealed partial class ExplodeByPressureComponent : Component
 {
     [DataField]
-    public float PressureLimit = 30000f;
+    public float PressureLimit = 15000f;
 }
