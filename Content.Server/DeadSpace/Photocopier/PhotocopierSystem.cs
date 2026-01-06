@@ -21,6 +21,7 @@ using Content.Shared.UserInterface;
 using Content.Shared.Power;
 using Content.Shared._Orion.Time;
 using Content.Shared.Hands.EntitySystems;
+using Content.Server._Orion.Time;
 
 namespace Content.Server.DeadSpace.Photocopier;
 
@@ -354,7 +355,7 @@ public sealed class PhotocopierSystem : EntitySystem
 
         text = text.Replace("DOCUMENT NAME", Loc.GetString(formPrototype.Name));
         // Erida-Edit-Start | GameTicker/DateTime > TimeSystem
-        text = text.Replace("{{HOUR.MINUTE.SECOND}}", _timeSystem.GetRoundDuration().ToString("hh\\:mm\\:ss"));
+        text = text.Replace("{{HOUR.MINUTE.SECOND}}", _timeSystem.GetStationTime().ToString("hh\\:mm\\:ss"));
         text = text.Replace("{{DAY.MONTH.YEAR}}", _timeSystem.GetStationDate().ToString("dd.MM.yyyy"));
         // Erida-Edit-End
 
