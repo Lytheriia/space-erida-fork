@@ -58,6 +58,7 @@ admin-smite-vomit-organs-name = Рвота органами
 admin-smite-ghostkick-name = Кик втихаря
 admin-smite-nyanify-name = НЯфикация
 admin-smite-kill-sign-name = Знак смерти
+admin-smite-kill-sign-name = Скрытый знак смерти
 admin-smite-omni-accent-name = Омни-акцент
 admin-smite-crawler-name = Crawler
 admin-smite-homing-rod-name = Следующий стержень
