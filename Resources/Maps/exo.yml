@@ -13307,7 +13307,6 @@ entities:
       supportedDisciplines:
       - Industrial
       - Arsenal
-      - Experimental
       - CivilianServices
   - uid: 18290
     components:
