@@ -705,6 +705,9 @@ namespace Content.Shared.Preferences
             if (NSFWOOCFlavorText != other.NSFWOOCFlavorText) return false;
             if (NSFWLinksFlavorText != other.NSFWLinksFlavorText) return false;
             if (NSFWTagsFlavorText != other.NSFWTagsFlavorText) return false;
+            if (Width != other.Width) return false;
+            if (Height != other.Height) return false;
+            if (CustomSpecies != other.CustomSpecies) return false;
             // Erida end
             return Appearance.MemberwiseEquals(other.Appearance);
         }
@@ -910,6 +913,20 @@ namespace Content.Shared.Preferences
             }
 
             nsfwtags = FormatTags(nsfwtags);
+
+            var customSpeciesMaxLength = configManager.GetCVar(CCVars.MaxCustomSpeciesLength);
+            string customSpecies;
+            if (CustomSpecies.Length > customSpeciesMaxLength)
+            {
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies)[..customSpeciesMaxLength];
+            }
+            else
+            {
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies);
+            }
+
+            var height = Math.Clamp(Height, 0.8f, 1.2f);
+            var width = Math.Clamp(Width, 0.8f, 1.2f);
             // Erida end
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
 
@@ -983,6 +1000,9 @@ namespace Content.Shared.Preferences
             NSFWOOCFlavorText = nsfwoocflavortext;
             NSFWLinksFlavorText = nsfwlinks;
             NSFWTagsFlavorText = nsfwtags;
+            CustomSpecies = customSpecies;
+            Height = height;
+            Width = width;
             // Erida end
             Age = age;
             Sex = sex;
