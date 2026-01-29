@@ -82,14 +82,16 @@ public sealed class CardiopulmonaryResuscitationSystem : EntitySystem
         if (args.Handled || args.Cancelled || !CheckMouth(args.Args.User, uid) || !_mobStateSystem.IsCritical(uid))
             return;
 
-        CRP(uid, component.CRPAsphyxiationAmount);
+        CRP(component.CRPAsphyxiationAmount, ref args);
         args.Repeat = true;
         args.Args.Event.Repeat = args.Repeat;
         args.Handled = true;
     }
 
-    private void CRP(EntityUid сRPied, float сRPAsphyxiationAmount)
+    private void CRP(float сRPAsphyxiationAmount, ref CRPDoAfterEvent args)
     {
+        var сRPied = args.Target;
+
         if (!TryComp<DamageableComponent>(сRPied, out var dCcomp))
             return;
 
@@ -100,7 +102,7 @@ public sealed class CardiopulmonaryResuscitationSystem : EntitySystem
         };
 
         _damageable.TryChangeDamage(
-            (сRPied, dCcomp),
+            (сRPied.Value, dCcomp),
             damageSpec,
             ignoreResistances: true,
             interruptsDoAfters: true
