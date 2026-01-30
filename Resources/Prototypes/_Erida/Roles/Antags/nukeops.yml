@@ -9,7 +9,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitInteQ
     shoes: ClothingShoesBootsCombatFilled
-    id: InteQVanguardIDCard
+    id: InteQBasePDA
     belt: ClothingBeltInteQWebbing
   storage:
     back:
@@ -17,7 +17,7 @@
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanterInteQ
 
-#Nuclear Operative Gear
+# Nuclear Operative Gear
 - type: startingGear
   id: InteQOperativeGearFull
   parent: InteQOperativeGearFullNoUplink
@@ -33,17 +33,18 @@
     head: ClothingHeadHelmetHardsuitSyndie
     neck: ClothingNeckScarfStripedSyndieRed
 
-#Nuclear Operative Commander Gear
+# Nuclear Operative Commander Gear
 - type: startingGear
   id: InteQCommanderGearFull
   parent: InteQOperativeGearFull
   equipment:
     neck: ClothingNeckCloakInteQ
     outerClothing: ClothingOuterHardsuitInteQ
+    id: InteQLeaderPDA
   inhand:
   - NukeOpsDeclarationOfWar
 
-#Nuclear Operative Medic Gear
+# Nuclear Operative Medic Gear
 - type: startingGear
   id: InteQOperativeMedicFull
   parent: InteQOperativeGearFull
@@ -53,6 +54,7 @@
     eyes: ClothingEyesGogglessMedInteQ
     shoes: ClothingShoesBootsMagInteQ
     belt: ClothingBeltInteQWebbingMedFilled
+    id: InteQMedicalPDA
   storage:
     back:
     - SyndiHypo

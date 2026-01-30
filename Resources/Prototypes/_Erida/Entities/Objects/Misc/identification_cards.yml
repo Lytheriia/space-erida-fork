@@ -177,3 +177,55 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandSecurity
+
+- type: entity
+  parent: [IDCardStandard, BaseInteQContraband]
+  id: InteQOpsLeaderIDCard
+  name: InteQ Leader ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-card-hollow
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: lead
+  - type: IdCard
+    jobIcon: JobIconInteQ
+  - type: Access
+    tags:
+    - InteQVanguardLeader
+    - InteQVanguard
+
+- type: entity
+  parent: [IDCardStandard, BaseInteQContraband]
+  id: InteQOpsMedicalIDCard
+  name: InteQ Medical ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-card-hollow
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: med
+  - type: IdCard
+    jobIcon: JobIconInteQ
+  - type: Access
+    tags:
+    - InteQVanguard
+
+- type: entity
+  parent: [IDCardStandard, BaseInteQContraband]
+  id: InteQOpsBaseIDCard
+  name: InteQ ID card
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: id-card-hollow
+    - sprite: _Erida/Objects/Misc/id_cards.rsi
+      state: base
+  - type: IdCard
+    jobIcon: JobIconInteQ
+  - type: Access
+    tags:
+    - InteQVanguard

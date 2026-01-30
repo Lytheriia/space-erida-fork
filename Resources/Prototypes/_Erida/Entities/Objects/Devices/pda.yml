@@ -106,3 +106,76 @@
     tags:
     - DoorBumpOpener
 
+- type: entity
+  parent: [ BasePDA, BaseInteQContraband ]
+  id: InteQBasePDA
+  name: InteQ PDA
+  components:
+  - type: Pda
+    id: InteQOpsBaseIDCard
+  - type: Sprite
+    sprite: _Erida/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "inteq-base"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        inteq-base
+  - type: PdaBorderColor
+    borderColor: "#c56c00"
+  - type: Icon
+    sprite: _Erida/Objects/Devices/pda.rsi
+    state: inteq-base
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - AstroNavCartridge
+
+- type: entity
+  parent: InteQBasePDA
+  id: InteQMedicalPDA
+  name: InteQ Medical PDA
+  components:
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          inteq-med
+    - type: Pda
+      id: InteQOpsMedicalIDCard
+    - type: Icon
+      state: inteq-med
+    - type: CartridgeLoader
+      uiKey: enum.PdaUiKey.Key
+      preinstalled:
+        - NotekeeperCartridge
+        - NanoTaskCartridge
+        - AstroNavCartridge
+        - MedTekCartridge
+
+- type: entity
+  parent: InteQBasePDA
+  id: InteQLeaderPDA
+  name: InteQ Leader PDA
+  components:
+    - type: Pda
+      id: InteQOpsLeaderIDCard
+    - type: Appearance
+      appearanceDataInit:
+        enum.PdaVisuals.PdaType:
+          !type:String
+          inteq-lead
+    - type: Icon
+      state: inteq-lead
