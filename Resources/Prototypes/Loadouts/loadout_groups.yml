@@ -802,7 +802,6 @@
   name: loadout-group-cargo-technician-id
   loadouts:
   - CargoTechnicianPDA
-  - SeniorCourierPDA
 
 - type: loadoutGroup
   id: CargoTechnicianJobTrinkets
