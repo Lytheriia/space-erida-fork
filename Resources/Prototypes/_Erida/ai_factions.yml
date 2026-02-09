@@ -1,0 +1,13 @@
+- type: npcFaction
+  id: InteQ
+  hostile:
+  - Syndicate
+  - NanoTrasen
+  - SimpleHostile
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Dragon
+  - AllHostile
+  - Wizard
+  - Xenoborg
