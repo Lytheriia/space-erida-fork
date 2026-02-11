@@ -150,6 +150,11 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
+  # Backmen-start
+  - type: ClothingGrant # supermatter
+    component:
+    - type: BkmSupermatterImmune
+  # Backmen-end
   - type: HideLayerClothing
     slots:
     - Tail

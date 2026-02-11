@@ -1,7 +1,0 @@
-- type: entity
-  parent: DoorElectronics
-  id: DoorElectronicsInteQ
-  suffix: InteQ, Locked
-  components:
-  - type: AccessReader
-    access: [["InteQ"]]
