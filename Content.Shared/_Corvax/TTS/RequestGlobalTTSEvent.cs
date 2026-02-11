@@ -1,7 +1,7 @@
 using Content.Shared._Backmen.TTS;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Corvax.TTS;
+namespace Content.Shared._Corvax.TTS;
 
 // ReSharper disable once InconsistentNaming
 [Serializable, NetSerializable]

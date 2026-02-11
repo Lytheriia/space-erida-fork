@@ -1,4 +1,4 @@
-﻿using Content.Shared.Corvax.TTS;
+﻿using Content.Shared._Corvax.TTS;
 using Content.Shared.Inventory;
 using Content.Shared.VoiceMask;
 

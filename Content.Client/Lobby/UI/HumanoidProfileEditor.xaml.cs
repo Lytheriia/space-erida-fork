@@ -11,7 +11,6 @@ using Content.Client.Sprite;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
-using Content.Shared.Corvax.CCCVars;
 using Content.Shared.GameTicking;
 using Content.Shared.Guidebook;
 using Content.Shared.Humanoid;
@@ -35,7 +34,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
-using Content.Shared.Prototypes;
+using Content.Shared._Corvax.CCCVars;
 
 namespace Content.Client.Lobby.UI
 {
@@ -276,6 +275,18 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion SpawnPriority
+
+            // Corvax-TTS-Start
+            #region Voice
+
+            if (configurationManager.GetCVar(CCCVars.TTSEnabled))
+            {
+                TTSContainer.Visible = true;
+                InitializeVoice();
+            }
+
+            #endregion
+            // Corvax-TTS-End
 
             #region Eyes
 
@@ -837,6 +848,7 @@ namespace Content.Client.Lobby.UI
             UpdateEyePickers();
             UpdateSaveButton();
             UpdateMarkings();
+            UpdateTTSVoicesControls(); // Corvax-TTS
 
             RefreshAntags();
             RefreshJobs();
@@ -1359,6 +1371,7 @@ namespace Content.Client.Lobby.UI
                     break;
             }
 
+            UpdateTTSVoicesControls(); // Corvax-TTS
             UpdateGenderControls();
             _markingsModel.SetOrganSexes(newSex);
             ReloadPreview();
@@ -1369,6 +1382,14 @@ namespace Content.Client.Lobby.UI
             Profile = Profile?.WithGender(newGender);
             ReloadPreview();
         }
+
+        // Corvax-TTS-Start
+        private void SetVoice(string newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            IsDirty = true;
+        }
+        // Corvax-TTS-End
 
         private void SetSpecies(string newSpecies)
         {

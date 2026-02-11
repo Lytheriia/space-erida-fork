@@ -1,10 +1,10 @@
 ﻿using System.Threading.Tasks;
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Corvax.TTS;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Utility;
 
 // ReSharper disable once CheckNamespace
-namespace Content.Server.Corvax.TTS;
+namespace Content.Server._Corvax.TTS;
 
 public sealed partial class TTSSystem
 {

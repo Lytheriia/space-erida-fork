@@ -20,6 +20,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using Robust.Shared;
 using YamlDotNet.RepresentationModel;
+using Content.Shared._Corvax.TTS;
 
 namespace Content.Shared.Preferences
 {
@@ -116,6 +117,9 @@ namespace Content.Shared.Preferences
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
 
         [DataField]
+        public string Voice { get; set; } = HumanoidProfileSystem.DefaultVoice; // Corvax-TTS
+
+        [DataField]
         public int Age { get; set; } = 18;
 
         [DataField]
@@ -175,6 +179,7 @@ namespace Content.Shared.Preferences
             string nsfwtagsflavortext,
             // Erida-End
             string species,
+            string voice, // Corvax-TTS
             int age,
             Sex sex,
             Gender gender,
@@ -202,6 +207,7 @@ namespace Content.Shared.Preferences
             NSFWTagsFlavorText = nsfwtagsflavortext;
             // Erida-End
             Species = species;
+            Voice = voice; // Corvax-TTS
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -246,6 +252,7 @@ namespace Content.Shared.Preferences
                 other.NSFWTagsFlavorText,
                 // Erida-End
                 other.Species,
+                other.Voice, // Corvax-TTS
                 other.Age,
                 other.Sex,
                 other.Gender,
@@ -317,6 +324,14 @@ namespace Content.Shared.Preferences
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
             }
 
+            // Corvax-TTS-Start
+            var voiceId = random.Pick(prototypeManager
+                .EnumeratePrototypes<TTSVoicePrototype>()
+                .Where(x=>x.RoundStart)
+                .Where(o => CanHaveVoice(o, sex)).ToArray()
+            ).ID;
+            // Corvax-TTS-End
+
             var gender = Gender.Epicene;
 
             switch (sex)
@@ -338,6 +353,7 @@ namespace Content.Shared.Preferences
                 Age = age,
                 Gender = gender,
                 Species = species,
+                Voice = voiceId, // Corvax-TTS
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
             };
         }
@@ -428,6 +444,13 @@ namespace Content.Shared.Preferences
         {
             return new(this) { Species = species };
         }
+
+        // Corvax-TTS-Start
+        public HumanoidCharacterProfile WithVoice(string voice)
+        {
+            return new(this) { Voice = voice };
+        }
+        // Corvax-TTS-End
 
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
@@ -598,6 +621,7 @@ namespace Content.Shared.Preferences
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
+            if (Voice != other.Voice) return false; // Corvax-TTS
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
@@ -868,6 +892,12 @@ namespace Content.Shared.Preferences
                          .Where(prototypeManager.HasIndex)
                          .ToList();
 
+             // Corvax-TTS-Start
+            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
+            if (voice is null || !CanHaveVoice(voice, Sex))
+                Voice = HumanoidProfileSystem.DefaultSexVoice[sex];
+            // Corvax-TTS-End
+
             Name = name;
             FlavorText = flavortext;
             // Erida start
@@ -966,6 +996,14 @@ namespace Content.Shared.Preferences
             return result;
         }
 
+        // Corvax-TTS-Start
+        // SHOULD BE NOT PUBLIC, BUT....
+        public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
+        {
+            return voice.RoundStart && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
+        }
+        // Corvax-TTS-End
+
         public HumanoidCharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
         {
             var profile = new HumanoidCharacterProfile(this);
@@ -1016,6 +1054,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(NSFWTagsFlavorText);
             // Erida-End
             hashCode.Add(Species);
+            hashCode.Add(Voice); // Corvax-TTS
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
             hashCode.Add((int)Gender);

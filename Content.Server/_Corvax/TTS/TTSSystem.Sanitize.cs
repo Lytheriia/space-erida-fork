@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using Content.Shared.Chat;
 
-namespace Content.Server.Corvax.TTS;
+namespace Content.Server._Corvax.TTS;
 
 // ReSharper disable once InconsistentNaming
 public sealed partial class TTSSystem

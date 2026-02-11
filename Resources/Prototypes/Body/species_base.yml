@@ -160,6 +160,7 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost
+  - type: TTS # Erida
 
 - type: entity
   abstract: true

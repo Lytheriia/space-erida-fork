@@ -5,7 +5,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server._Backmen.Language;
 using Content.Server.Chat.Managers;
-using Content.Server.Corvax.TTS;
+using Content.Server._Corvax.TTS;
 using Content.Server.GameTicking;
 using Content.Server.Players;
 using Content.Server.Popups;
@@ -45,7 +45,7 @@ using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Server.Speech.EntitySystems;
 using Content.Shared.Station.Components;
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Corvax.TTS;
 
 namespace Content.Server.Chat.Systems;
 

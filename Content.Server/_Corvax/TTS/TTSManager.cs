@@ -7,11 +7,11 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared.Corvax.CCCVars;
+using Content.Shared._Corvax.CCCVars;
 using Prometheus;
 using Robust.Shared.Configuration;
 
-namespace Content.Server.Corvax.TTS;
+namespace Content.Server._Corvax.TTS;
 
 // ReSharper disable once InconsistentNaming
 public sealed class TTSManager

@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using Content.Server.Chat.Systems;
 using Content.Server.SS220.Chat.Systems;
 using Content.Server.Players.RateLimiting;
-using Content.Shared.Corvax.CCCVars;
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Corvax.CCCVars;
+using Content.Shared._Corvax.TTS;
 using Content.Shared.GameTicking;
 using Content.Shared.Radio;
 using Content.Shared.Players.RateLimiting;
@@ -14,7 +14,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Shared.Chat;
 
-namespace Content.Server.Corvax.TTS;
+namespace Content.Server._Corvax.TTS;
 
 // ReSharper disable once InconsistentNaming
 public sealed partial class TTSSystem : EntitySystem
