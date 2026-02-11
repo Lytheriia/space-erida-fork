@@ -167,6 +167,7 @@
     - id: RCDAmmo
     - id: RubberStampCE
     - id: MetalFoamGrenade
+    - id: SupermatterFlatpack #backmen
     - id: PlushieLizardJobChiefengineer
       prob: 0.02
 
