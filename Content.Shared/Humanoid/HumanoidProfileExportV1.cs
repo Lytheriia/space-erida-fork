@@ -58,6 +58,44 @@ public sealed partial class HumanoidCharacterProfileV1
     [DataField]
     public string FlavorText;
 
+    // Erida-start
+    [DataField]
+    public string CharacterContent;
+
+    [DataField]
+    public string OOCContent;
+
+    [DataField]
+    public string TagsContent;
+
+    [DataField]
+    public string LinksContent;
+
+    [DataField]
+    public string GreenContent;
+
+    [DataField]
+    public string YellowContent;
+
+    [DataField]
+    public string RedContent;
+
+    [DataField]
+    public string NSFWContent;
+
+    [DataField]
+    public string NSFWOOCContent;
+
+    [DataField]
+    public string NSFWLinksContent;
+
+    [DataField]
+    public string NSFWTagsContent;
+
+    [DataField]
+    public string Voice;
+    // Erida-end
+
     [DataField]
     public ProtoId<SpeciesPrototype> Species;
 
@@ -81,7 +119,7 @@ public sealed partial class HumanoidCharacterProfileV1
 
     public HumanoidCharacterProfile ToV2()
     {
-        return new(Name, FlavorText, Species, Age, Sex, Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts);
+        return new(Name, FlavorText, OOCContent, CharacterContent, GreenContent, YellowContent, RedContent, TagsContent, LinksContent, NSFWContent, NSFWOOCContent, NSFWLinksContent, NSFWTagsContent, Species, Voice, Age, Sex, Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts);
     }
 }
 

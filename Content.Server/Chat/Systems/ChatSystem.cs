@@ -5,7 +5,7 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server._Backmen.Language;
 using Content.Server.Chat.Managers;
-using Content.Server.Corvax.TTS;
+using Content.Server._Corvax.TTS;
 using Content.Server.GameTicking;
 using Content.Server.Players;
 using Content.Server.Popups;
@@ -45,7 +45,7 @@ using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Server.Speech.EntitySystems;
 using Content.Shared.Station.Components;
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Corvax.TTS;
 
 namespace Content.Server.Chat.Systems;
 
@@ -289,7 +289,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
 
-        message = SanitizeInGameOOCMessage(message, player); // Orion-Edit | player
+        message = SanitizeInGameOOCMessage(message, player); // Erida-Edit | player
 
         var sendType = type;
         // If dead player LOOC is disabled, unless you are an admin with Moderator perms, send dead messages to dead chat
@@ -894,7 +894,7 @@ private void SendEntityWhisper(
         return prefix + newMessage;
     }
 
-    private string SanitizeInGameOOCMessage(string message, ICommonSession? session) // Orion-Edit | ICommonSession
+    private string SanitizeInGameOOCMessage(string message, ICommonSession? session) // Erida-Edit | ICommonSession
     {
         var newMessage = message.Trim();
         newMessage = FormattedMessage.EscapeText(newMessage);

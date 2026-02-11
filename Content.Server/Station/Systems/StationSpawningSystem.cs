@@ -139,10 +139,17 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             _humanoidProfile.ApplyProfileTo(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
 
+            /* // Erida-Replace
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
             {
                 AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
             }
+*/
+
+            // Erida-Start
+            if (_configurationManager.GetCVar(CCVars.FlavorText))
+                AddComp<DetailExaminableComponent>(entity.Value).SetProfile(profile);
+            // Erida-End
         }
 
         if (loadout != null)

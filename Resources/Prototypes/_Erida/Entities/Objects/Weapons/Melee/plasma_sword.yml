@@ -74,6 +74,8 @@
       map: [ "blade" ]
   - type: Item
     sprite: _Erida/Objects/Weapons/Melee/plasma_sword-inhands.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
 
 - type: entity
   parent: PlasmaSword

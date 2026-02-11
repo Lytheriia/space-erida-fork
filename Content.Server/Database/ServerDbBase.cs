@@ -232,6 +232,11 @@ namespace Content.Server.Database
             if (Enum.TryParse<Gender>(profile.Gender, true, out var genderVal))
                 gender = genderVal;
 
+            // Corvax-TTS-Start
+            var voice = profile.Voice;
+            if (voice == String.Empty)
+                voice = HumanoidProfileSystem.DefaultSexVoice[sex];
+            // Corvax-TTS-End
 
             var markings =
                 new Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>>();
@@ -308,7 +313,21 @@ namespace Content.Server.Database
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
+                // Erida-Start
+                profile.OOCFlavorText,
+                profile.CharacterFlavorText,
+                profile.GreenFlavorText,
+                profile.YellowFlavorText,
+                profile.RedFlavorText,
+                profile.TagsFlavorText,
+                profile.LinksFlavorText,
+                profile.NSFWFlavorText,
+                profile.NSFWOOCFlavorText,
+                profile.NSFWLinksFlavorText,
+                profile.NSFWTagsFlavorText,
+                // Erida-End
                 profile.Species,
+                voice, // Corvax-TTS
                 profile.Age,
                 sex,
                 gender,
@@ -335,7 +354,21 @@ namespace Content.Server.Database
 
             profile.CharacterName = humanoid.Name;
             profile.FlavorText = humanoid.FlavorText;
+            // Erida-Start
+            profile.OOCFlavorText = humanoid.OOCFlavorText;
+            profile.CharacterFlavorText = humanoid.CharacterFlavorText;
+            profile.GreenFlavorText = humanoid.GreenFlavorText;
+            profile.YellowFlavorText = humanoid.YellowFlavorText;
+            profile.RedFlavorText = humanoid.RedFlavorText;
+            profile.TagsFlavorText = humanoid.TagsFlavorText;
+            profile.LinksFlavorText = humanoid.LinksFlavorText;
+            profile.NSFWFlavorText = humanoid.NSFWFlavorText;
+            profile.NSFWLinksFlavorText = humanoid.NSFWLinksFlavorText;
+            profile.NSFWOOCFlavorText = humanoid.NSFWOOCFlavorText;
+            profile.NSFWTagsFlavorText = humanoid.NSFWTagsFlavorText;
+            // Erida-End
             profile.Species = humanoid.Species;
+            profile.Voice = humanoid.Voice; // Corvax-TTS
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
             profile.Gender = humanoid.Gender.ToString();

@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
 using Content.Server._Backmen.TTS;
 using Content.Server.SS220.Chat.Systems;
-using Content.Shared.Corvax.TTS;
+using Content.Shared._Corvax.TTS;
 using Content.Shared.SS220.AnnounceTTS;
 
 // ReSharper disable once CheckNamespace
-namespace Content.Server.Corvax.TTS;
+namespace Content.Server._Corvax.TTS;
 
 public sealed partial class TTSSystem
 {

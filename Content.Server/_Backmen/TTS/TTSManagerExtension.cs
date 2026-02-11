@@ -5,8 +5,8 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Server.Corvax.TTS;
-using Content.Shared.Corvax.CCCVars;
+using Content.Server._Corvax.TTS;
+using Content.Shared._Corvax.CCCVars;
 using Prometheus;
 using Robust.Shared.Configuration;
 
