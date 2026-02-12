@@ -1,0 +1,52 @@
+# Corvax-HiddenDesc-Start
+ent-TelecrystalRed = красный кристалл
+    .desc = Похоже, он переливается подозрительно манящей энергией.
+    .suffix = 20 ТК, телекристалл
+ent-TelecrystalOrange = оранжевый кристалл
+    .desc = Похоже, он переливается подозрительно манящей энергией.
+    .suffix = 20 ТК, телекристалл
+ent-TelecrystalRed1 = { ent-TelecrystalRed }
+    .suffix = 1 ТК, телекристалл
+    .desc = { ent-TelecrystalRed.desc }
+ent-TelecrystalOrange1 = { ent-TelecrystalOrange }
+    .suffix = 1 ТК, телекристалл
+    .desc = { ent-TelecrystalOrange.desc }
+ent-TelecrystalRed5 = { ent-TelecrystalRed }
+    .suffix = 5 ТК, телекристалл
+    .desc = { ent-TelecrystalRed.desc }
+ent-TelecrystalOrange5 = { ent-TelecrystalOrange }
+    .suffix = 5 ТК, телекристалл
+    .desc = { ent-TelecrystalOrange.desc }
+ent-TelecrystalRed10 = { ent-TelecrystalRed }
+    .suffix = 10 ТК, телекристалл
+    .desc = { ent-TelecrystalRed.desc }
+ent-TelecrystalOrange10 = { ent-TelecrystalOrange }
+    .suffix = 10 ТК, телекристалл
+    .desc = { ent-TelecrystalOrange.desc }
+ent-BaseInteQUplinkRadio = старое радио
+    .desc = Винтажное радио, которое по неясной причине застыло на крайне необычной частоте, со словом «АпЛинк» на лицевой стороне.
+    .suffix = Пустой, аплинк InteQ
+ent-BaseUplinkRadioSyndicate = старое радио
+    .desc = Винтажное радио, которое по неясной причине застыло на крайне необычной частоте, со словом «АпЛинк» на лицевой стороне.
+    .suffix = Пустой, аплинк Синдиката
+ent-BaseUplinkRadio20TC = { ent-BaseInteQUplinkRadio }
+    .suffix = 20 ТК, аплинк InteQ
+    .desc = { ent-BaseInteQUplinkRadio.desc }
+ent-BaseUplinkRadio25TC = { ent-BaseInteQUplinkRadio }
+    .suffix = 25 ТК, аплинк InteQ
+    .desc = { ent-BaseInteQUplinkRadio.desc }
+ent-BaseUplinkRadio40TC = { ent-BaseInteQUplinkRadio }
+    .suffix = 40 ТК, аплинк InteQ, Ядерный Оперативник
+    .desc = { ent-BaseInteQUplinkRadio.desc }
+ent-SyndicateUplinkRadio40TC = { ent-BaseInteQUplinkRadio }
+    .suffix = 40 ТК, аплинк Синдиката
+    .desc = { ent-BaseInteQUplinkRadio.desc }
+ent-BaseUplinkRadio60TC = { ent-BaseInteQUplinkRadio }
+    .suffix = 60 ТК, аплинк InteQ, Одинокий ядерный оперативник
+    .desc = { ent-BaseInteQUplinkRadio.desc }
+ent-BaseUplinkRadioDebug = { ent-BaseInteQUplinkRadio }
+    .suffix = DEBUG, аплинк InteQ
+    .desc = { ent-BaseInteQUplinkRadio.desc }
+
+# Corvax-HiddenDesc-End
+

@@ -1,7 +1,0 @@
-<#-- Auto generated file -->
-ent-WallmountTelescreen = телеэкран
-    .desc = Наконец-то тут появился нормальный сигнал...
-    .suffix = Монитор камер
-
-ent-WallmountTelescreenFrame = каркас телеэкрана
-    .desc = Наконец-то тут появился нормальный сигнал...

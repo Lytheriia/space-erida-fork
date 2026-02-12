@@ -1,7 +1,0 @@
-<#-- Auto generated file -->
-ent-PenExplodingBox = футляр взрывающейся ручки
-    .desc = Небольшая коробочка, содержащая взрывающуюся ручку. После вскрытия упаковка дезинтегрируется, не оставив улик.
-
-ent-PenExploding = {ent-Pen}
-    .desc = {ent-Pen}
-    .suffix = Взрывчатка

@@ -1,3 +1,0 @@
-<#-- Auto generated file -->
-ent-ClothingHeadHelmetEVAInteQ = шлем ЕВА Интек
-    .desc = Простой и стильный шлем ЕВА, спроектированный с максимальным безумием.

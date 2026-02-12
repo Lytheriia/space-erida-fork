@@ -1,3 +1,0 @@
-<#-- Auto generated file -->
-ent-MailSpamLetter = спам письмо
-    .desc = Даже космос на защищён от нежелательной почты.

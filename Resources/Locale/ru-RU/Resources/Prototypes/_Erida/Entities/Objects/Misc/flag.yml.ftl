@@ -1,3 +1,0 @@
-<#-- Auto generated file -->
-ent-ItemFlagMiniInteQ = сложенный флаг Интек
-    .desc = Это выглядит круто, заткнись и возьми мои деньги.

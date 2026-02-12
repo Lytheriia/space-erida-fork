@@ -1,3 +1,0 @@
-<#-- Auto generated file -->
-ent-Rack = стойка
-    .desc = Стойка для хранения вещей.

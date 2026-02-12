@@ -1,3 +1,0 @@
-<#-- Auto generated file -->
-ent-ClothingNeckStoleChaplain = стола священника
-    .desc = Элегантно оформленная накидка с яркими золотыми крестами на обоих концах.

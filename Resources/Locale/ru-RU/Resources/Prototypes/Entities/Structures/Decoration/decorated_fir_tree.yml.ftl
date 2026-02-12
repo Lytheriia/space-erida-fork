@@ -1,3 +1,0 @@
-<#-- Auto generated file -->
-ent-DecoratedFirTree = наряженная ёлка
-    .desc = Праздничное дерево для очень праздничного мероприятия.
