@@ -57,6 +57,7 @@ namespace Content.Client.Lobby.UI
 
         // CCvar.
         private int _maxNameLength;
+        private int _maxCustomSpeciesLength; // Erida
         private bool _allowFlavorText;
 
         private FlavorText.FlavorText? _flavorText;
@@ -150,6 +151,7 @@ namespace Content.Client.Lobby.UI
             _sprite = _entManager.System<SpriteSystem>();
 
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
+            _maxCustomSpeciesLength = _cfgManager.GetCVar(CCVars.MaxCustomSpeciesLength); // Erida
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
 
             Markings.SetModel(_markingsModel);
@@ -244,6 +246,22 @@ namespace Content.Client.Lobby.UI
                 SpeciesButton.SelectId(args.Id);
                 SetSpecies(_species[args.Id].ID);
                 OnSkinColorOnValueChanged();
+            };
+
+            // Erida-start
+            IsCustomSpecies.OnPressed += _ =>
+            {
+                CustomSpeciesContainer.Visible = !CustomSpeciesContainer.Visible;
+                if (!IsCustomSpecies.Pressed)
+                    SetCustomSpecies(string.Empty);
+            };
+
+            CustomSpeciesEdit.IsValid = args => args.Length <= _maxCustomSpeciesLength;
+            CustomSpeciesEdit.OnTextChanged += args =>
+            {
+                string formattedMessage = FormattedMessage.RemoveMarkupPermissive(args.Text);
+                if (!string.IsNullOrEmpty(formattedMessage))
+                    SetCustomSpecies(formattedMessage);
             };
 
             #region Skin
@@ -864,6 +882,8 @@ namespace Content.Client.Lobby.UI
             UpdateMarkings();
             UpdateTTSVoicesControls(); // Corvax-TTS
             UpdateCorporationControls(); // Erida edit
+            UpdateCustomSpeciesEdit(); // Erida edit
+
 
             RefreshAntags();
             RefreshJobs();
@@ -1421,6 +1441,15 @@ namespace Content.Client.Lobby.UI
             ReloadPreview();
         }
 
+
+        // Erida-start
+        private void SetCustomSpecies(string newSpecies)
+        {
+            Profile = Profile?.WithCustomSpecies(newSpecies);
+            IsDirty = true;
+        }
+        // Erida-end
+
         private void SetName(string newName)
         {
             Profile = Profile?.WithName(newName);
@@ -1543,6 +1572,21 @@ namespace Content.Client.Lobby.UI
         {
             AgeEdit.Text = Profile?.Age.ToString() ?? "";
         }
+
+        // Erida start
+        private void UpdateCustomSpeciesEdit()
+        {
+            IsCustomSpecies.Pressed = false;
+            CustomSpeciesContainer.Visible = false;
+
+            CustomSpeciesEdit.Text = Profile?.CustomSpecies ?? string.Empty;
+            if (!string.IsNullOrEmpty(Profile?.CustomSpecies))
+            {
+                IsCustomSpecies.Pressed = true;
+                CustomSpeciesContainer.Visible = true;
+            }
+        }
+        // Erida end
 
         /// <summary>
         /// Updates selected job priorities to the profile's.

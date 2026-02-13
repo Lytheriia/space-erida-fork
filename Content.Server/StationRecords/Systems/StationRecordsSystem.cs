@@ -98,7 +98,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);
         TryComp<DnaComponent>(player, out var dnaComponent);
 
-        CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.Gender, profile.Corporation, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records); // Erida
+        CreateGeneralRecord(station, idUid.Value, profile.Name, profile.Age, profile.Species, profile.CustomSpecies, profile.Gender, profile.Corporation, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records); // Erida
     }
 
 
@@ -135,6 +135,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         string name,
         int age,
         string species,
+        string customspecies, // Erida
         Gender gender,
         CorporationPreference corporation, // Erida
         string jobId,
@@ -162,6 +163,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             JobIcon = jobPrototype.Icon,
             JobPrototype = jobId,
             Species = species,
+            CustomSpecies = customspecies, // Erida edit
             Gender = gender,
             Corporation = corporation, // Erida edit
             DisplayPriority = jobPrototype.RealDisplayWeight,
@@ -344,7 +346,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             StationRecordFilterType.Job =>
                 !someRecord.JobTitle.ToLower().Contains(filterLowerCaseValue),
             StationRecordFilterType.Species =>
-                !someRecord.Species.ToLower().Contains(filterLowerCaseValue),
+                !someRecord.CustomSpecies.ToLower().Contains(filterLowerCaseValue), // Erida
             StationRecordFilterType.Prints => someRecord.Fingerprint != null
                 && IsFilterWithSomeCodeValue(someRecord.Fingerprint, filterLowerCaseValue),
             StationRecordFilterType.DNA => someRecord.DNA != null

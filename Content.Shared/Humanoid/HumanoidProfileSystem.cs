@@ -42,6 +42,7 @@ public sealed class HumanoidProfileSystem : EntitySystem
         ent.Comp.Gender = profile.Gender;
         ent.Comp.Age = profile.Age;
         ent.Comp.Species = profile.Species;
+        ent.Comp.CustomSpecies = profile.CustomSpecies; // Erida edit
         ent.Comp.Sex = profile.Sex;
         SetTTSVoice(ent.Owner, profile.Voice, ent.Comp);
         SetCorporation(ent.Owner, profile.Corporation, ent.Comp);

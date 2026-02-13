@@ -117,6 +117,11 @@ namespace Content.Shared.Preferences
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = DefaultSpecies;
 
+        // Erida-start
+        [DataField]
+        public string CustomSpecies { get; set; } = string.Empty;
+        // Erida end
+
         [DataField]
         public string Voice { get; set; } = HumanoidProfileSystem.DefaultVoice; // Corvax-TTS
 
@@ -170,7 +175,7 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
-            // Erida-Start
+            // Erida start
             string oocflavortext,
             string characterflavortext,
             string greenflavortext,
@@ -182,8 +187,9 @@ namespace Content.Shared.Preferences
             string nsfwoocflavortext,
             string nsfwlinksflavortext,
             string nsfwtagsflavortext,
-            // Erida-End
             string species,
+            string customspecies,
+            // Erida end
             string voice, // Corvax-TTS
             int age,
             Sex sex,
@@ -213,6 +219,7 @@ namespace Content.Shared.Preferences
             NSFWTagsFlavorText = nsfwtagsflavortext;
             // Erida-End
             Species = species;
+            CustomSpecies = customspecies; // Erida edit
             Voice = voice; // Corvax-TTS
             Age = age;
             Sex = sex;
@@ -259,6 +266,7 @@ namespace Content.Shared.Preferences
                 other.NSFWTagsFlavorText,
                 // Erida-End
                 other.Species,
+                other.CustomSpecies, // Erida edit
                 other.Voice, // Corvax-TTS
                 other.Age,
                 other.Sex,
@@ -430,6 +438,11 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithNSFWTagsText(string nsfwTagsFlavorText)
         {
             return new(this) { NSFWTagsFlavorText = nsfwTagsFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithCustomSpecies(string customspecies)
+        {
+            return new(this) { CustomSpecies = customspecies };
         }
         // Erida-End
 
@@ -637,6 +650,7 @@ namespace Content.Shared.Preferences
             if (Sex != other.Sex) return false;
             if (Gender != other.Gender) return false;
             if (Species != other.Species) return false;
+            if (CustomSpecies != other.CustomSpecies) return false; // Erida edit
             if (Voice != other.Voice) return false; // Corvax-TTS
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
@@ -809,6 +823,17 @@ namespace Content.Shared.Preferences
 
             tags = FormatTags(tags);
 
+            var customSpeciesMaxLength = configManager.GetCVar(CCVars.MaxCustomSpeciesLength);
+            string customSpecies;
+            if (CustomSpecies.Length > customSpeciesMaxLength)
+            {
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies)[..customSpeciesMaxLength];
+            }
+            else
+            {
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies);
+            }
+
             string links;
             var maxLinksLength = configManager.GetCVar(CCVars.LinksLength);
             if (LinksFlavorText.Length > maxLinksLength)
@@ -939,6 +964,7 @@ namespace Content.Shared.Preferences
             NSFWOOCFlavorText = nsfwoocflavortext;
             NSFWLinksFlavorText = nsfwlinks;
             NSFWTagsFlavorText = nsfwtags;
+            CustomSpecies = customSpecies;
             // Erida-End
             Age = age;
             Sex = sex;
@@ -1082,6 +1108,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(NSFWTagsFlavorText);
             // Erida-End
             hashCode.Add(Species);
+            hashCode.Add(CustomSpecies); // Erida edit
             hashCode.Add(Voice); // Corvax-TTS
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
