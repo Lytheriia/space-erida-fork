@@ -179,6 +179,8 @@
       # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
   - type: PryUnpowered
   - type: BlockWeather
+  - type: WeldingSparksAnimation # Goobstation
+    startingOffset: 0, 0.5
   - type: GuideHelp
     guides:
     - Airlocks
