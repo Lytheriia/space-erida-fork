@@ -1867,7 +1867,8 @@ namespace Content.Client.Lobby.UI
             else // Whelp, the fixture doesn't exist, guesstimate it instead
                 WeightLabel.Text = Loc.GetString("humanoid-profile-editor-weight-label", ("weight", (int)71));
 
-            _sprite.SetScale((SpriteView.PreviewDummy, SpriteView.Sprite), new Vector2(Profile.Width, Profile.Height));
+            if (SpriteView.Sprite != null)
+                _sprite.SetScale((SpriteView.PreviewDummy, SpriteView.Sprite), new Vector2(Profile.Width, Profile.Height));
         }
         // end Goobstation: port EE height/width sliders
 
