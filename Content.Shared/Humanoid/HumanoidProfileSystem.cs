@@ -88,7 +88,8 @@ public sealed class HumanoidProfileSystem : EntitySystem
         if (!TryComp<LanguageKnowledgeComponent>(uid, out var comp))
             return;
 
-        if (corporation == CorporationPreference.NanoTrasen || corporation == CorporationPreference.Syndicate) {
+        if (corporation == CorporationPreference.NanoTrasen)
+        {
             var languageName = "Codespeak" + $"{corporation}";
 
             comp.SpokenLanguages.Add(languageName);

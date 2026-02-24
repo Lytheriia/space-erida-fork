@@ -66,6 +66,15 @@ public sealed class RespawnSystem : EntitySystem
         SetRespawnTime(session.UserId, ref respawnData, _timing.CurTime + TimeSpan.FromSeconds(_respawnTime));
     }
 
+    /// <summary>
+    /// DeltaV: Sets the respawn time for a player to the full death cooldown.
+    /// </summary>
+    public void SetDeathRespawnTime(NetUserId player)
+    {
+        var respawnData = GetRespawnData(player);
+        SetRespawnTime(player, ref respawnData, _timing.CurTime + TimeSpan.FromSeconds(_respawnTime));
+    }
+
     private void OnMindRemoved(EntityUid entity, MindContainerComponent _, MindRemovedMessage e)
     {
         if (e.Mind.Comp.UserId is null)
@@ -80,6 +89,9 @@ public sealed class RespawnSystem : EntitySystem
             return; // Frontier: don't penalize user for exiting ghost roles
 
         if (HasComp<GhostComponent>(entity)) // Don't penalize user for reobserving
+            return;
+
+        if (TryComp<ActorComponent>(entity, out var actor) && _admin.IsAdmin(actor.PlayerSession)) // Admins get free respawns
             return;
 
         // Get respawn info

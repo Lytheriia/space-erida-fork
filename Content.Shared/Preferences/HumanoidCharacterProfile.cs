@@ -365,7 +365,7 @@ namespace Content.Shared.Preferences
             // Corvax-TTS-Start
             var voiceId = random.Pick(prototypeManager
                 .EnumeratePrototypes<TTSVoicePrototype>()
-                .Where(x=>x.RoundStart)
+                .Where(x => x.RoundStart)
                 .Where(o => CanHaveVoice(o, sex)).ToArray()
             ).ID;
             // Corvax-TTS-End
@@ -591,7 +591,7 @@ namespace Content.Shared.Preferences
         {
             return new(this)
             {
-                _antagPreferences = new (antagPreferences),
+                _antagPreferences = new(antagPreferences),
             };
         }
 
@@ -958,7 +958,6 @@ namespace Content.Shared.Preferences
             var corporation = Corporation switch
             {
                 CorporationPreference.NanoTrasen => CorporationPreference.NanoTrasen,
-                CorporationPreference.Syndicate => CorporationPreference.Syndicate,
                 CorporationPreference.Outsource => CorporationPreference.Outsource,
                 _ => CorporationPreference.Outsource
             };

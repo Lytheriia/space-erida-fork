@@ -85,9 +85,6 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         DragContainer.OnKeyBindUp += OnKeybindUp;
         RecenterButton.OnPressed += _ => Recenter();
 
-        NanoTrasenButton.OnPressed += _ => OnCorporationButton("NanoTrasen");
-        SyndicateButton.OnPressed += _ => OnCorporationButton("Syndicate");
-
         UpdatePanels(List);
         Recenter();
     }
@@ -197,30 +194,8 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
             _draggin = false;
     }
 
-    // Erida start
-    private void OnCorporationButton(string corporation)
-    {
-        foreach (Button button in CorporationBox.Children)
-        {
-            if (button.Name != null && button.Name.Contains(corporation))
-            {
-                button.Disabled = true;
-                continue;
-            }
-
-            button.Disabled = false;
-        }
-
-        _currentCorporation = corporation;
-
-        Recenter();
-        UpdatePanels(List);
-    }
-
     private void OnOpenPrerequistPressed(TechnologyPrototype tech)
     {
-        if (_currentCorporation != tech.Corporation) { OnCorporationButton(tech.Corporation); }
-
         Recenter();
 
         foreach (var child in DragContainer.Children)
