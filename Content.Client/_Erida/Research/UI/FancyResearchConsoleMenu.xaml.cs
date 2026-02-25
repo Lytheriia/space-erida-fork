@@ -58,10 +58,6 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     /// </summary>
     private bool _draggin;
 
-    // Erida start
-    private string _currentCorporation = "NanoTrasen";
-    // Erida end
-
     /// <summary>
     /// Global position that all tech relates to.
     /// For dragging mostly
@@ -100,8 +96,6 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         foreach (var tech in List)
         {
             var proto = _prototype.Index<TechnologyPrototype>(tech.Key);
-
-            if (proto.Corporation != _currentCorporation) { continue; }
 
             var control = new FancyResearchConsoleItem(proto, _sprite, tech.Value);
             DragContainer.AddChild(control);

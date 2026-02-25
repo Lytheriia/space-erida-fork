@@ -1,4 +1,3 @@
-using Content.Shared._Erida.Preference;
 using Content.Shared._Erida.TTS;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -37,11 +36,6 @@ public sealed partial class HumanoidProfileComponent : Component
     [DataField("voice")]
     public ProtoId<TTSVoicePrototype> Voice { get; set; } = HumanoidProfileSystem.DefaultVoice;
     // Corvax-TTS-End
-
-    // Erida start
-    [DataField, AutoNetworkedField]
-    public CorporationPreference Corporation;
-    // Erida end
 
     // begin Goobstation: port EE height/width sliders
     [DataField, AutoNetworkedField]

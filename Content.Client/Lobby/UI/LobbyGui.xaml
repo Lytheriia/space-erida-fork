@@ -38,7 +38,6 @@
                                                StyleClasses="LabelBig" HorizontalExpand="True" />
                                         <!-- Imp manifest button -->
                                         <Button Name="ManifestButton" Access="Public"
-                                                Text="Manifest"
                                                 StyleClasses="ButtonBig" MinWidth="137" />
                                         <Button Name="ReadyButton" Access="Public" ToggleMode="True"
                                                 Text="{Loc 'ui-lobby-ready-up-button'}"

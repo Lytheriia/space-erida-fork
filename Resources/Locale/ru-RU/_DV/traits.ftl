@@ -60,3 +60,39 @@ trait-protected-desc = В силу вашей должности, ценност
 
 trait-felenid-name = Пресет фелинида
 trait-felenid-desc = Добавляет персонажу особые акценты, звуки и язык.
+
+trait-language-nekomimetic-name = Некомиметик
+trait-language-nekomimetic-desc = Добавляет персонажу знание языка, присущего феленидам.
+
+trait-language-mar-name = Мар
+trait-language-mar-desc = Добавляет персонажу знание таинственного языка шэдоукинов.
+
+trait-language-demonic-name = Демонический
+trait-language-demonic-desc = Добавляет персонажу знание языка, присущего арканам.
+
+trait-language-shark-name = Акулий
+trait-language-shark-desc = Добавляет персонажу знание языка, используемого плафемами.
+
+trait-language-canilunzt-name = Канилунцт
+trait-language-canilunzt-desc = Добавляет персонажу знание языка антропоморфов.
+
+trait-language-spider-name = Паучий
+trait-language-spider-desc = Добавляет персонажу знание языка арахнидов.
+
+trait-language-rootspeak-name = Корнеречь
+trait-language-rootspeak-desc = Добавляет персонажу знание языка дион.
+
+trait-language-dwarven-name = Дворфийский
+trait-language-dwarven-desc = Добавляет персонажу знание дворфийского языка.
+
+trait-language-moffic-name = Моффик
+trait-language-moffic-desc = Добавляет персонажу знание языка, используемого нианами.
+
+trait-language-dragon-name = Драконий
+trait-language-dragon-desc = Добавляет персонажу знание языка унатхов.
+
+trait-language-slime-name = Слизневый
+trait-language-slime-desc = Добавляет персонажу знание языка слаймов.
+
+trait-language-freespeak-name = Фриспик
+trait-language-freespeak-desc = Добавляет персонажу знание языка воксов.

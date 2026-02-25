@@ -22,6 +22,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, MapInitEvent>(OnUniversalInit);
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentShutdown>(OnUniversalShutdown);
         SubscribeLocalEvent<LanguageKnowledgeComponent, LanguageListUpdated>(OnLanguageListChanged); // Erida edit
+        SubscribeLocalEvent<LanguageOnSpawnComponent, MapInitEvent>(OnLanguageOnSpawnAdding); // Erida edit
 
         _languageSpeakerQuery = GetEntityQuery<LanguageSpeakerComponent>();
         _universalLanguageSpeakerQuery = GetEntityQuery<UniversalLanguageSpeakerComponent>();
@@ -229,6 +230,14 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
             component.CurrentLanguage = component.SpokenLanguages.FirstOrDefault(UniversalPrototype);
 
         UpdateEntityLanguages(uid);
+    }
+
+    private void OnLanguageOnSpawnAdding(Entity<LanguageOnSpawnComponent> entity, ref MapInitEvent ev)
+    {
+        foreach (var lang in entity.Comp.Languages)
+            AddLanguage(entity.Owner, lang, true, true);
+
+        RemComp<LanguageOnSpawnComponent>(entity.Owner);
     }
 
     #endregion

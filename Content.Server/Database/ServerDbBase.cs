@@ -8,7 +8,6 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
-using Content.Shared._Erida.Preference;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body;
 using Content.Shared.Construction.Prototypes;
@@ -240,8 +239,6 @@ namespace Content.Server.Database
 
             var spawnPriority = (SpawnPriorityPreference)profile.SpawnPriority;
 
-            var corporation = (CorporationPreference)profile.Corporation; // Erida edit
-
             var gender = sex == Sex.Male ? Gender.Male : Gender.Female;
             if (Enum.TryParse<Gender>(profile.Gender, true, out var genderVal))
                 gender = genderVal;
@@ -355,7 +352,6 @@ namespace Content.Server.Database
                     markings
                 ),
                 spawnPriority,
-                corporation, // Erida edit
                 jobs,
                 (PreferenceUnavailableMode)profile.PreferenceUnavailable,
                 antags.ToHashSet(),
@@ -396,7 +392,7 @@ namespace Content.Server.Database
             profile.EyeColor = appearance.EyeColor.ToHex();
             profile.SkinColor = appearance.SkinColor.ToHex();
             profile.SpawnPriority = (int)humanoid.SpawnPriority;
-            profile.Corporation = (int)humanoid.Corporation; // Erida edit
+            profile.SpawnPriority = (int) humanoid.SpawnPriority;
             profile.OrganMarkings = JsonSerializer.SerializeToDocument(dataNode.ToJsonNode());
 
             // support for downgrades - at some point this should be removed

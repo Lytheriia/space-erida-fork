@@ -61,3 +61,6 @@ trait-category-mental = Психические
 trait-category-accents = Акценты
 trait-category-meta = Мета
 trait-category-species = Расовые
+trait-category-language = Знание языка
+
+trait-condition-job-is = Вы должны быть [color={$color}]{$job}[/color].

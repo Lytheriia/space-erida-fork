@@ -28,5 +28,13 @@
   id: Species
   name: trait-category-species
   priority: 50
-  accentColor: "#f28213"  # Red
+  accentColor: "#f28213"  # orange
   maxTraits: 1
+
+- type: traitCategory
+  id: Language
+  name: trait-category-language
+  priority: 25
+  accentColor: "#1356f2"  # blue
+  maxTraits: 2
+  maxPoints: 3
