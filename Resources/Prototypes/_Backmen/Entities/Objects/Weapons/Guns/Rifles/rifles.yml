@@ -3,7 +3,7 @@
   parent: BaseWeaponRifle
   id: WeaponRifleUTAPM1
   suffix: Автомат
-  description: Штурмовая винтовка производства "Interdyne", облегченный вариант Марк 2, используется зачастую частными охранными организациями.
+  description: Штурмовая винтовка производства "Interdyne" облегченный вариант Марк 2, используется зачастую частными охранными организациями.
   components:
   - type: Sprite
     sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/utap-mark1/big.rsi
