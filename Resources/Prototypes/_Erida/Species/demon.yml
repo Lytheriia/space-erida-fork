@@ -1,0 +1,16 @@
+- type: species
+  id: Demon
+  name: species-name-demon
+  roundStart: true
+  prototype: MobDemon
+  defaultSkinTone: "#FFFFFF"
+  dollPrototype: AppearanceDemon
+  skinColoration: Hues
+  minAge: 18
+  maxAge: 500
+  youngAge: 501
+  oldAge: 502
+  sexes:
+    - Male
+    - Female
+    - Unsexed
