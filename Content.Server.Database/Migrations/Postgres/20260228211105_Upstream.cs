@@ -30,6 +30,10 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.DropTable(
                 name: "server_ban");
 
+            migrationBuilder.DropColumn(
+                name: "corporation",
+                table: "profile");
+
             migrationBuilder.AddColumn<JsonDocument>(
                 name: "organ_markings",
                 table: "profile",
@@ -302,6 +306,13 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.DropColumn(
                 name: "organ_markings",
                 table: "profile");
+
+            migrationBuilder.AddColumn<int>(
+                name: "corporation",
+                table: "profile",
+                type: "integer",
+                nullable: false,
+                defaultValue: 0);
 
             migrationBuilder.CreateTable(
                 name: "server_ban",

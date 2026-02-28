@@ -27,6 +27,10 @@ namespace Content.Server.Database.Migrations.Sqlite
             migrationBuilder.DropTable(
                 name: "server_ban");
 
+            migrationBuilder.DropColumn(
+                name: "corporation",
+                table: "profile");
+
             migrationBuilder.AddColumn<byte[]>(
                 name: "organ_markings",
                 table: "profile",
@@ -298,6 +302,13 @@ namespace Content.Server.Database.Migrations.Sqlite
             migrationBuilder.DropColumn(
                 name: "organ_markings",
                 table: "profile");
+
+            migrationBuilder.AddColumn<int>(
+                name: "corporation",
+                table: "profile",
+                type: "INTEGER",
+                nullable: false,
+                defaultValue: 0);
 
             migrationBuilder.CreateTable(
                 name: "server_ban",
