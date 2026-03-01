@@ -48,13 +48,7 @@ cargo-console-fund-transfer-user-unknown = Неизвестно
 cargo-console-paper-reason-default = Отсутствует
 cargo-console-paper-approver-default = Самостоятельно
 cargo-console-paper-print-name = Заказ #{ $orderNumber }
-cargo-console-paper-print-text =
-    Заказ #{ $orderNumber }
-    Товар: { $itemName }
-    Кол-во: { $orderQuantity }
-    Запросил: { $requester }
-    Причина: { $reason }
-    Одобрил: { $approver }
+
 # Cargo shuttle console
 cargo-shuttle-console-menu-title = Консоль вызова грузового шаттла
 cargo-shuttle-console-station-unknown = Неизвестно
