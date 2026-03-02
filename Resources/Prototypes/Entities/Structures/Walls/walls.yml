@@ -849,8 +849,10 @@
   - type: Icon
     sprite: Structures/Walls/shuttle_diagonal.rsi
     state: state0
+# Erida edit start
 # - type: Reflect
 #   reflectProb: 1
+# Erida edit end
   - type: Pullable
   - type: Airtight
     noAirWhenFullyAirBlocked: false
@@ -961,8 +963,10 @@
           3: { state: shuttle_construct-3, visible: true}
           4: { state: shuttle_construct-4, visible: true}
           5: { state: shuttle_construct-5, visible: true}
+# Erida edit start
 # - type: Reflect
 #   reflectProb: 1
+# Erida edit end
   - type: Fixtures
     fixtures:
       fix1:
