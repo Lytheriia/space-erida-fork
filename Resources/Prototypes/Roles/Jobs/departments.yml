@@ -22,7 +22,6 @@
   - Clown
   - HeadOfPersonnel
   - Janitor
-  - Lawyer
   - Librarian
   - Mime
   - Musician
@@ -37,6 +36,17 @@
   description: department-CentralCommand-description
   color: "#0c344d"
   roles:
+  # CentComm ivent roles start
+  - ChiefOfStaffCentralCommand
+  - CentralCommandOfficer
+  - CentralCommandOperator
+  - CentralCommandIntendant
+  - CentralCommandEngineer
+  - CentralCommandClerc
+  - OSO
+  - CentralCommandHoS
+  - CentralCommandSecurity
+  # CentComm ivent roles end
   - CentralCommandOfficial
   - CBURN
   - ERTLeader
@@ -62,6 +72,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  - IAA
   - CentralCommandOfficial
   - CBURN
   - ERTLeader
@@ -73,6 +84,15 @@
   - DeathSquad
   primary: false
   weight: 100
+
+- type: department
+  id: Law
+  name: department-Law
+  description: department-Law-description
+  color: "#d98b71"
+  roles:
+  - IAA
+  - Lawyer
 
 - type: department
   id: Engineering
@@ -110,6 +130,9 @@
   - SecurityOfficer
   - Detective
   - Warden
+  - Brigmedic
+  - SecurityPilot # Corvax-Pilot
+  - Militia # Erida
 
 - type: department
   id: Science

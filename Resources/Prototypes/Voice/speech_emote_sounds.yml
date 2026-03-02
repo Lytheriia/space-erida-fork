@@ -566,12 +566,6 @@
       collection: Salutes
     Wink:
       collection: Wink
-    Snap:
-      collection: Snaps
-      params:
-        volume: -6
-    Salute:
-      collection: Salutes
     # Erida end
 
 - type: emoteSounds
