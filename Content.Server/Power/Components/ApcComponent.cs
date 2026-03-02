@@ -24,7 +24,7 @@ public sealed partial class ApcComponent : BaseApcNetComponent
     public TimeSpan LastUiUpdate;
 
     [DataField("enabled")]
-    public bool MainBreakerEnabled = true;
+    public bool MainBreakerEnabled = false; // Erida edit
 
     /// <summary>
     /// APC state needs to always be updated after first processing tick.
