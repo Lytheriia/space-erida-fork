@@ -103,3 +103,11 @@
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: horns_double
+
+- type: marking
+  id: TailSharky
+  bodyPart: Tail
+#  speciesRestriction: [Shark]
+  sprites:
+    - sprite: _ADT/Mobs/Customization/Shark/parts.rsi
+      state: tail_m
