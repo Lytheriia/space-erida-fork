@@ -73,6 +73,7 @@
     - state: fire0
       map: ["fireAlarmBase"]
     - state: fire_off
+      shader: unshaded  # Erida edit
       map: ["fireAlarmState"]
     - state: fire_b2
       map: ["enum.WiresVisualLayers.MaintenancePanel"]

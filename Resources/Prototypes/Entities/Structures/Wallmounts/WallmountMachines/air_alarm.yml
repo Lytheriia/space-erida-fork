@@ -72,11 +72,12 @@
   - type: Appearance
   - type: WiresVisuals
   - type: Sprite
-    sprite: Structures/Wallmounts/air_monitors.rsi
+    sprite: _Erida/Structures/Wallmounts/air_monitors.rsi  # Erida edit
     layers:
     - state: alarmp
       map: ["airAlarmBase"]
     - state: alarm0
+      shader: unshaded  # Erida edit
       map: ["airAlarmState"] # TODO: fire alarm enum
     - state: alarmx
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
@@ -117,7 +118,7 @@
   description: An air alarm. Doesn't look like it'll be alarming air any time soon.
   components:
   - type: Sprite
-    sprite: Structures/Wallmounts/air_monitors.rsi
+    sprite: _Erida/Structures/Wallmounts/air_monitors.rsi  # Erida edit
     layers:
     - state: alarm_b1
       map: [ "enum.ConstructionVisuals.Layer" ]

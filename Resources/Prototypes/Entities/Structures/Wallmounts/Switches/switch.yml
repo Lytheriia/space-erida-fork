@@ -9,8 +9,13 @@
   - type: StationAiWhitelist
   - type: Sprite
     drawdepth: SmallObjects
-    sprite: Structures/Wallmounts/switch.rsi
-    state: on
+    # Erida edit start
+    sprite: _Erida/Structures/Wallmounts/switch.rsi
+    layers:
+      - state: dead
+      - state: on_unshaded
+        shader: unshaded
+    # Erida edit end
   - type: SignalSwitch
   - type: UseDelay
     delay: 0.5 # prevent light-toggling auto-clickers.
@@ -62,8 +67,13 @@
   - type: StationAiWhitelist
   - type: Sprite
     drawdepth: SmallObjects
-    sprite: Structures/Wallmounts/switch.rsi
-    state: dead
+    # Erida edit start
+    sprite: _Erida/Structures/Wallmounts/switch.rsi
+    layers:
+      - state: dead
+      - state: on_unshaded
+        shader: unshaded
+    # Erida edit end
   - type: UseDelay
     delay: 0.5 # prevent light-toggling auto-clickers.
   - type: SignalSwitch

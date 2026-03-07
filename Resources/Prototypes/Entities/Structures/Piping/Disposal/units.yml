@@ -11,7 +11,7 @@
   - type: Climbable
     vaultable: false
   - type: Sprite
-    sprite: Structures/Piping/disposal.rsi
+    sprite: _Erida/Structures/Piping/disposal.rsi  # Erida edit
     layers:
     - state: condisposal
       map: [ "enum.DisposalUnitVisualLayers.Unanchored" ]
@@ -23,10 +23,13 @@
       map: [ "enum.DisposalUnitVisualLayers.OverlayFlush" ]
     - state: dispover-charge
       map: [ "enum.DisposalUnitVisualLayers.OverlayCharging" ]
+      shader: unshaded  # Erida edit
     - state: dispover-ready
       map: [ "enum.DisposalUnitVisualLayers.OverlayReady" ]
+      shader: unshaded  # Erida edit
     - state: dispover-full
       map: [ "enum.DisposalUnitVisualLayers.OverlayFull" ]
+      shader: unshaded  # Erida edit
     - state: dispover-handle
       map: [ "enum.DisposalUnitVisualLayers.OverlayEngaged" ]
   - type: Physics
@@ -84,7 +87,7 @@
   name: disposal unit
   components:
   - type: Sprite
-    sprite: Structures/Piping/disposal.rsi
+    sprite: _Erida/Structures/Piping/disposal.rsi  # Erida edit
     snapCardinals: true
   - type: Construction
     graph: DisposalMachine
@@ -109,7 +112,7 @@
   description: A pneumatic mail delivery unit.
   components:
   - type: Sprite
-    sprite: Structures/Piping/disposal.rsi
+    sprite: _Erida/Structures/Piping/disposal.rsi  # Erida edit
     snapCardinals: true
     layers:
       - state: conmailing
@@ -122,10 +125,13 @@
         map: [ "enum.DisposalUnitVisualLayers.OverlayFlush" ]
       - state: dispover-charge
         map: [ "enum.DisposalUnitVisualLayers.OverlayCharging" ]
+        shader: unshaded  # Erida edit
       - state: dispover-ready
         map: [ "enum.DisposalUnitVisualLayers.OverlayReady" ]
+        shader: unshaded  # Erida edit
       - state: dispover-full
         map: [ "enum.DisposalUnitVisualLayers.OverlayFull" ]
+        shader: unshaded  # Erida edit
       - state: mailover-handle
         map: [ "enum.DisposalUnitVisualLayers.OverlayEngaged" ]
   - type: Construction

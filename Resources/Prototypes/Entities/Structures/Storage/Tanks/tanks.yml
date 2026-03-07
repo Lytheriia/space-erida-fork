@@ -120,9 +120,13 @@
   description: Seems like a good place to stand and waste time. It has a stock of paper cups on the side.
   components:
   - type: Sprite
-    sprite: Structures/Storage/tanks.rsi
+    sprite: _Erida/Structures/Storage/tanks.rsi  # Erida edit
     layers:
       - state: watercooler-2
+        # Erida edit start
+      - state: watercooler-2_unshaded
+        shader: unshaded
+        # Erida edit end
       - state: watercooler-2-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false

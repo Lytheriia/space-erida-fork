@@ -13,6 +13,11 @@
       visible: true
     - state: glass
       map: ["enum.OpenableVisuals.Layer"]
+      # Erida edit start
+    - state: locked
+      shader: unshaded
+      map: ["enum.LockVisualLayers.Lock"]
+      # Erida edit end
   - type: ItemSlots
     slots:
       ItemCabinet:
