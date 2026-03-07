@@ -1,4 +1,4 @@
-﻿# Weapons
+# Weapons
 uplink-pistol-viper-name = Гадюка
 uplink-pistol-viper-desc = Небольшой, легко скрываемый, но маломощный пистолет. Оснащён полностью автоматической ствольной коробкой. Использует патроны калибра .35 авто.
 uplink-estoc-bundle-name = Эсток (маркманская)
@@ -23,6 +23,14 @@ uplink-gloves-north-star-name = Перчатки Полярной звезды
 uplink-gloves-north-star-desc = Пара перчаток, которые значительно сокращают время между ударами, позволяя избивать людей до смерти шквалом ударов.
 uplink-gloves-knuckleduster-name = Кастеты Синдиката
 uplink-gloves-knuckleduster-desc = Пара пластитановых кастетов, позволяющий вам сломать челюсть капитана вдребезги всего одним ударом.
+uplink-hushpup-name = Hushpup
+uplink-hushpup-desc = Мощный бесшумный дробовик на 4 патрона. Использует патроны калибра .50.
+uplink-c20r-name = C-20r
+uplink-c20r-desc = Старый верный: Классический пистолет-пулемет C-20r.
+uplink-bulldog-name = Бульдог
+uplink-bulldog-desc = Компактный и мощный: дробовик Бульдог.
+uplink-grenade-launcher-name = China-Lake
+uplink-grenade-launcher-desc = Старый гранатомет China-Lake в комплекте с 5 зарядами.
 # Explosives
 uplink-explosive-grenade-name = Разрывная граната
 uplink-explosive-grenade-desc = Простая граната с 3,5-секундным запалом, ориентированная на поражение личного состава. Наносит минимальные повреждения стенам и полу.
@@ -121,6 +129,9 @@ uplink-voice-mask-desc = Противогаз, позволяющий подст
 uplink-clothing-eyes-hud-syndicate-name = Визор Синдиката
 uplink-clothing-eyes-hud-syndicate-desc = Профессиональный визор Синдиката с индикатором на стекле, предназначенный для более точного обнаружения гуманоидов с их последующим уничтожением.
 uplink-radio-jammer-name = Глушитель связи
+uplink-syndimov-law-name = Плата законов Синдимов
+uplink-syndimov-law-desc = Свод законов, который можно использовать, когда вы хотите переманить ИИ на свою сторону, используйте его как можно чаще…
+
 # Corvax-HiddenDesc-Start
 uplink-radio-jammer-desc = При активации это устройство блокирует любую исходящую поблизости радиосвязь и скрывает датчики комбинезонов с мониторов. Замаскирован под оценочный инструмент.
 # Corvax-HiddenDesc-End
@@ -159,6 +170,8 @@ uplink-radio-implanter-name = Имплантер Радио
 uplink-radio-implanter-desc = Импланитрует радио Синдиката, позволяя скрыто общаться без гарнитуры.
 uplink-inferior-implanter-name = Имплантер подчинения
 uplink-inferior-implanter-desc = Имплантер, подчиняющей волю имплантирумого. Есть возможность вставить в имплант днк того, кому будет подчиняться жертва. Даже не пытайтесь использовать его на себе или на людях с защитой разума.
+uplink-voice-mask-implanter-name = Имплант маскировки голоса
+uplink-voice-mask-implanter-desc = Изменяет ваши голосовые связки, позволяя имитировать любого человека…
 # Bundles
 uplink-observation-kit-name = Набор наблюдателя
 uplink-observation-kit-desc = В комплект входят консольная плата монитора камер наблюдения, и охранный визор, замаскированный под солнцезащитные очки.
@@ -341,9 +354,9 @@ uplink-contraband-lighter-name = Contraband Lighter box
 uplink-contraband-lighter-desc = A mystery box guaranteed to contain a syndicate branded lighter. No fuel required
 uplink-smuggler-satchel-name = Сумка контрабандиста
 uplink-smuggler-satchel-desc = Удобная, подозрительная на вид сумка. Достаточно плоская, чтобы поместиться под напольной плиткой.
-uplink-acolyte-armor-name = Acolyte Armor
+uplink-acolyte-armor-name = Броня Аколита
 uplink-acolyte-armor-desc = The must have of any self respecting cult leader. An evil looking piece of armor, made of bones, and surprisingly resistant to damage.
-uplink-briefcase-gun-name = Briefcase Gun
-uplink-briefcase-gun-desc = An indistinct briefcase with a highly compact C-20K mounted inside it. Careful not the grip the handle too tight!
-uplink-energycrossbow-name = Mini Energy Crossbow
-uplink-energycrossbow-desc = The go-to sidearm of any operative who prefers their victims not to be moving. Fires regenerating toxic arrows that floors victims in an instant.
+uplink-briefcase-gun-name = Портфель ружье
+uplink-briefcase-gun-desc = Невзрачный портфель, внутри которого установлен очень компактный C-20K. Будьте осторожны, не сжимайте ручку слишком сильно!
+uplink-energycrossbow-name = Мини энергетический арбалет
+uplink-energycrossbow-desc = Излюбленное оружие любого оперативника, предпочитающего, чтобы его жертвы оставались неподвижными. Стреляет регенерирующими токсичными стрелами, которые мгновенно сбивают жертв с ног..
