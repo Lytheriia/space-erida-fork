@@ -666,3 +666,35 @@
           - state: uk_thigh
     - type: TemperatureProtection
       heatingCoefficient: 0.85
+
+- type: entity
+  parent: ClothingUnderSocksBase
+  id: ClothingUnderSocksCoder
+  name: coder socks
+  description: It's time to code sisters!!11!
+  components:
+  - type: Sprite
+    sprite: Clothing/Under/Socks/coder.rsi
+  - type: Clothing
+    sprite: Clothing/Under/Socks/coder.rsi
+    clothingVisuals:
+        socks:
+          - state: equipped-FEET
+  - type: TemperatureProtection
+    heatingCoefficient: 0.85
+
+- type: entity
+  parent: ClothingUnderSocksBase
+  id: ClothingUnderSocksBee
+  name: bee socks
+  description: Make them loins buzz!
+  components:
+  - type: Sprite
+    sprite: Clothing/Under/Socks/bee.rsi
+  - type: Clothing
+    sprite: Clothing/Under/Socks/bee.rsi
+    clothingVisuals:
+        socks:
+          - state: equipped-FEET
+  - type: TemperatureProtection
+    heatingCoefficient: 0.85
