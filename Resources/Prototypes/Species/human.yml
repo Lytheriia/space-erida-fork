@@ -14,6 +14,7 @@
   dollPrototype: AppearanceHuman
   skinColoration: HumanToned
 
+# That shit just for fix database
 - type: species
   id: Oni
   name: species-name-human
@@ -29,3 +30,12 @@
   prototype: MobHuman
   dollPrototype: AppearanceHuman
   skinColoration: HumanToned
+
+- type: species
+  id: Harpy
+  name: species-name-human
+  roundStart: false
+  prototype: MobHuman
+  dollPrototype: AppearanceHuman
+  skinColoration: HumanToned
+
