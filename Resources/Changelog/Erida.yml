@@ -38,3 +38,16 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/293
   avatar_url: https://avatars.githubusercontent.com/u/110207359?v=4
   title: Test 8
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: >-
+        ПНВ и термалы в аплинк, а также исследования НИО. Доступны для
+        производства на протолате и техфабе СБ после исследования
+    - type: Add
+      message: у осща в очках и визорах есть ПНВ
+  id: 4
+  time: '2026-03-24T21:42:48.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/294
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: night and thermal vision goggles in uplink and research
