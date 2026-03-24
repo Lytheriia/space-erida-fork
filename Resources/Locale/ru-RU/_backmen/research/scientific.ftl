@@ -13,3 +13,5 @@ research-technology-alternative-research-machines = Оборудование а�
 research-technology-metempsychosis = Метемпсихоз
 research-technology-abnormal-artifact-manipulation-machines = Оборудование манипуляции артефактами
 research-technology-Comprehensive-development-system-research-machines = Комплексная система научно-исследовательских разработок
+research-technology-night-vision-goggles = Прибор ночного зрения
+research-technology-thermal-vision-goggles = Тепловизионные очки

@@ -28,6 +28,9 @@
     - Biological
   - type: IdentityBlocker
     coverage: EYES
+  - type: NightVision # Erida-edit
+    flashDurationMultiplier: 2
+    isEquipment: true
 
 - type: entity
   parent: ClothingEyesGlassesBlueShield

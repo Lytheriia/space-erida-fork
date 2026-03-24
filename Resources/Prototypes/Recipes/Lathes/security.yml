@@ -96,6 +96,37 @@
     Plasma: 500
     Gold: 500
 
+# Erida-start
+
+- type: latheRecipe
+  id: ClothingEyesNightVisionGoggles
+  result: ClothingEyesNightVisionGoggles
+  categories:
+  - Clothing
+  completetime: 300
+  materials:
+    Steel: 500
+    Uranium: 1000
+    Plastic: 500
+    Gold: 500
+    Diamond: 500
+
+- type: latheRecipe
+  id: ClothingEyesThermalVisionGoggles
+  result: ClothingEyesThermalVisionGoggles
+  categories:
+  - Clothing
+  completetime: 600
+  materials:
+    Steel: 500
+    Plastic: 500
+    Plasma: 2000
+    Gold: 1000
+    Diamond: 1000
+    Bananium: 1500 # for some reason 1000 -> 6,67 in game. 1500 -> 10
+
+# Erida-end
+
 # Shields
 - type: latheRecipe
   parent: BaseShieldRecipe

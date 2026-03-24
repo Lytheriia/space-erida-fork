@@ -78,6 +78,8 @@
   - PowerCageSmall
   - TelescopicShield
   - ClothingBackpackHarmpack
+  - ClothingEyesNightVisionGoggles # Erida-edit
+  - ClothingEyesThermalVisionGoggles # Erida-edit
 
 - type: latheRecipePack
   id: SecurityBoards

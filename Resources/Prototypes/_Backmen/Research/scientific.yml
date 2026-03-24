@@ -56,6 +56,40 @@
    - ClothingEyesHudDiagnostic
   position: 4,2
 
+# Erida-start
+
+- type: technology
+  id: NightVisionGoggles
+  name: research-technology-night-vision-goggles
+  icon:
+    sprite: _White/Clothing/Eyes/Goggles/nightvision.rsi
+    state: icon
+  discipline: Scientific
+  tier: 1
+  cost: 20000
+  recipeUnlocks:
+   - ClothingEyesNightVisionGoggles
+  technologyPrerequisites:
+  - IntegratedHUDs
+  position: 5,2
+
+- type: technology
+  id: ThermalVisionGoggles
+  name: research-technology-thermal-vision-goggles
+  icon:
+    sprite: _White/Clothing/Eyes/Goggles/thermal.rsi
+    state: icon
+  discipline: Scientific
+  tier: 1
+  cost: 30000
+  recipeUnlocks:
+   - ClothingEyesThermalVisionGoggles
+  technologyPrerequisites:
+  - NightVisionGoggles
+  position: 5,3
+
+# Erida-end
+
 - type: technology
   id: GravityManipulation
   name: research-technology-gravity-manipulation

@@ -26,6 +26,8 @@
   - ClothingBackpackHarmpack
   - ClothingEyesHudDiagnostic # Backmen
   - PersonalAI # Backmen
+  - ClothingEyesNightVisionGoggles # Erida-edit
+  - ClothingEyesThermalVisionGoggles # Erida-edit
 
 - type: latheRecipePack
   id: ScienceClothing

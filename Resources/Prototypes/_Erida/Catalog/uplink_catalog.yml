@@ -25,3 +25,79 @@
     Telecrystal: 11
   categories:
     - UplinkImplants
+
+- type: listing
+  id: NightVisionGogglesSyndie
+  name: uplink-night-vision-goggles-syndie-name
+  description: uplink-night-vision-goggles-syndie-desc
+  icon: { sprite: _White/Clothing/Eyes/Goggles/snightvision.rsi, state: icon }
+  productEntity: ClothingEyesNightVisionGogglesSyndie
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: ThermalVisionGogglesSyndie
+  name: uplink-thermal-vision-goggles-syndie-name
+  description: uplink-thermal-vision-goggles-syndie-desc
+  icon: { sprite: _White/Clothing/Eyes/Goggles/sthermals.rsi, state: icon }
+  productEntity: ClothingEyesThermalVisionGogglesSyndie
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 3
+  categories:
+    - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    blacklist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: NightVisionGogglesNukie
+  name: uplink-night-vision-goggles-nukie-name
+  description: uplink-night-vision-goggles-nukie-desc
+  icon: { sprite: _White/Clothing/Eyes/Goggles/snightvision.rsi, state: icon }
+  productEntity: ClothingEyesNightVisionGogglesNukie
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
+
+- type: listing
+  id: ThermalVisionGogglesNukie
+  name: uplink-thermal-vision-goggles-nukie-name
+  description: uplink-thermal-vision-goggles-nukie-desc
+  icon: { sprite: _White/Clothing/Eyes/Goggles/sthermals.rsi, state: icon }
+  productEntity: ClothingEyesThermalVisionGogglesNukie
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 3
+  categories:
+    - UplinkWearables
+  conditions:
+  - !type:StoreWhitelistCondition
+    whitelist:
+      tags:
+      - NukeOpsUplink
