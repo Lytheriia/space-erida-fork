@@ -1,10 +1,25 @@
 Entries:
 - author: Sidzaru
   changes:
-  - message: Circuit tiles and faux tiles have been moved to the cutter machine.
-    type: Tweak
+    - message: Circuit tiles and faux tiles have been moved to the cutter machine.
+      type: Tweak
   id: 1
   time: '2025-09-24T00:12:45.0000000+00:00'
   url: https://github.com/dead-space-server/space-erida-14/pull/292
   avatar_url: https://avatars.githubusercontent.com/u/110207359?v=4
   title: Test
+- author: YourName
+  changes:
+    - type: Add
+      message: Добавлено веселье!
+    - type: Remove
+      message: Удалено веселье!
+    - type: Tweak
+      message: Изменено веселье!
+    - type: Fix
+      message: Исправлено веселье!
+  id: 2
+  time: '2026-03-24T17:08:06.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/292
+  avatar_url: https://avatars.githubusercontent.com/u/110207359?v=4
+  title: Test7
