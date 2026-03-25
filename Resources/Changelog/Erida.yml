@@ -51,3 +51,22 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/294
   avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
   title: night and thermal vision goggles in uplink and research
+- author: Sidzaru
+  changes:
+    - type: Add
+      message: Правила сервера перенесены в игру.
+    - type: Remove
+      message: Обломки больше не спавнят труп ЦК.
+    - type: Fix
+      message: Позитронный мозг и нимфы дионы вновь понимают Тау Сети.
+    - type: Fix
+      message: Исправлено отображение ступней под носками.
+    - type: Fix
+      message: Исправлен баг с игральными картами.
+    - type: Tweak
+      message: Бюрократическая ошибка больше не может удалить ВСЕ роли на станции.
+  id: 5
+  time: '2026-03-25T01:24:17.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/295
+  avatar_url: https://avatars.githubusercontent.com/u/110207359?v=4
+  title: '[Tweak] Minor changes'
