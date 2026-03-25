@@ -52,6 +52,15 @@
     whitelist:
       components:
       - SecretStash
+  # Erida start
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+  # Erida end
 
 - type: entity
   parent: MMI
@@ -137,3 +146,14 @@
       whitelist:
         components:
         - SecretStash
+    # Erida start
+    - type: LanguageSpeaker
+      currentLanguage: TauCetiBasic
+    - type: LanguageKnowledge
+      speaks:
+      - Binary
+      - TauCetiBasic
+      understands:
+      - Binary
+      - TauCetiBasic
+    # Erida end

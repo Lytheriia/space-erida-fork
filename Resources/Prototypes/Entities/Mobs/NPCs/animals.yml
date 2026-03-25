@@ -3866,6 +3866,17 @@
     reformTime: 10
     popupText: diona-reform-attempt
     reformPrototype: MobDionaReformed
+  # Erida start
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - RootSpeak
+    understands:
+    - TauCetiBasic
+    - RootSpeak
+  # Erida end
 
 - type: entity
   parent: MobDionaNymph
