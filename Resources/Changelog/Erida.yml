@@ -112,3 +112,12 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/299
   avatar_url: https://avatars.githubusercontent.com/u/183598448?v=4
   title: '[Tweaks/Fix] Атмос'
+- author: Агент плесень хайпует
+  changes:
+    - type: Add
+      message: Добавлены урчания и WEH для унатхов! VIVA LA UNATI!
+  id: 10
+  time: '2026-03-26T19:11:21.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/301
+  avatar_url: https://avatars.githubusercontent.com/u/145777900?v=4
+  title: 'Добавление урчания и веха для унатхов'
