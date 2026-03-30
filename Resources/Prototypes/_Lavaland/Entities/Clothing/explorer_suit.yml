@@ -56,6 +56,9 @@
     tags:
     - ExplorerSuit
   - type: PressureArmorChange
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
 
 - type: entity
   parent: ClothingHeadBase
@@ -117,6 +120,9 @@
   - type: Construction
     graph: ExplorerSuit
     node: reinforced1
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
 
 - type: entity
   parent: LavalandEquipmentExplorerHood
@@ -170,6 +176,9 @@
   - type: Construction
     graph: ExplorerSuit
     node: reinforced2
+  - type: ClothingSpeedModifier
+    walkModifier: 0.7
+    sprintModifier: 0.7
 
 - type: entity
   parent: LavalandEquipmentExplorerHood
@@ -223,6 +232,9 @@
   - type: Construction
     graph: ExplorerSuit
     node: reinforced3
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.65
 
 - type: entity
   parent: LavalandEquipmentExplorerHood

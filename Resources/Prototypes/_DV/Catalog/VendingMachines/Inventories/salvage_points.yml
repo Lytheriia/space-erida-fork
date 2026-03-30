@@ -73,6 +73,8 @@
     cost: 750
   - id: SpaceCash5000
     cost: 750
+  - id: HandheldGPSBasic
+    cost: 800
   - id: SurvivalMedipen
     cost: 800
   - id: PKAUpgradeRange
@@ -99,6 +101,8 @@
   #   cost: 1500
   # - id: WeaponPlasmaCutter
   #   cost: 1700
+  - id: UndeterminedWeaponShaftMiner
+    cost: 2000
   - id: BorgModuleAdvancedMining
     cost: 2000
   - id: ClothingHandsGlovesCombat
