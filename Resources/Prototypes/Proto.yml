@@ -388,7 +388,7 @@
   - type: AccessReader
     access: [[ "NuclearOperative" ]]
   - type: CommunicationsConsole
-    title: HIS "Magnum"
+    title: shit-s
     color: "#353acc"
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
@@ -1383,7 +1383,7 @@
     - state: blackrealware
     - state: legatussecurity
   - type: IdCard
-    jobTitle: Легат Безопастности
+    jobTitle: shit-b
     jobIcon: JobIconLegatusSecurity
   - type: Access
     tags:
@@ -1408,7 +1408,7 @@
     - state: blackrealware
     - state: regent
   - type: IdCard
-    jobTitle: Регент
+    jobTitle: shit-n
     jobIcon: JobIconRegentSecurity
   - type: Access
     tags:
@@ -1433,7 +1433,7 @@
     - state: blackrealware
     - state: security
   - type: IdCard
-    jobTitle: Оперативник безопастности
+    jobTitle: shit-c
     jobIcon: JobIconSecurityOperator
   - type: Access
     tags:
@@ -1458,7 +1458,7 @@
     - state: blackrealware
     - state: enginer
   - type: IdCard
-    jobTitle: Инженер
+    jobTitle: shit-e
     jobIcon: JobIconEnginer
   - type: Access
     tags:
@@ -1490,7 +1490,7 @@
     - state: blackrealware
     - state: service
   - type: IdCard
-    jobTitle: Сервисный сотрудник
+    jobTitle: shit-o
     jobIcon: JobIconService
   - type: Access
     tags:
@@ -1515,7 +1515,7 @@
     - state: blackrealware
     - state: cargo
   - type: IdCard
-    jobTitle: Сотрудник снабжения
+    jobTitle: shit-l
     jobIcon: JobIconCargoRealWare
   - type: Access
     tags:
@@ -1541,7 +1541,7 @@
     - state: blackrealware
     - state: visitormagnum
   - type: IdCard
-    jobTitle: Посетитель линкора
+    jobTitle: shit-p
     jobIcon: JobIconVisitorRealWare
 
 - type: jobIcon
