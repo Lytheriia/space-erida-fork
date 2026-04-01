@@ -1,155 +1,26 @@
+#region Small base
 - type: entity
-  id: BaseThruster
-  parent: BaseStructureDynamic
-  name: thruster
-  description: A thruster that allows a shuttle to move.
-  abstract: true
-  components:
-    - type: Fixtures #Mono start
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 190
-          mask:
-          - MachineMask
-          layer:
-          - MachineLayer #Mono end
-    - type: AmbientSound
-      enabled: false
-      range: 4
-      volume: -4
-      sound:
-        path: /Audio/Effects/shuttle_thruster.ogg
-    - type: Transform
-      anchored: true
-    - type: Physics
-      bodyType: Static
-    - type: Rotatable
-      rotateWhileAnchored: true
-    - type: Thruster
-      damage:
-        types:
-          Heat: 40
-          Structural: 40
-    - type: ThermalSignature
-    - type: InteractionOutline
-    - type: Sprite
-    - type: Appearance
-    - type: ThrusterVisuals
-    - type: ApcPowerReceiver
-      powerLoad: 1500
-    - type: ExtensionCableReceiver
-    - type: Damageable
-      damageContainer: StructuralInorganic
-      damageModifierSet: Electronic
-    - type: Destructible
-      thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 300  # Changed 100->300 because impact damage is real
-        behaviors:
-          - !type:DoActsBehavior
-            acts: ["Destruction"]
-          - !type:PlaySoundBehavior
-            sound:
-              collection: MetalBreak
-    - type: StaticPrice
-      price: 300
-    - type: GuideHelp
-      guides:
-      - ShuttleCraft
-  placement:
-    mode: SnapgridCenter
-
-- type: entity
-  id: Thruster
-  name: thruster
-  parent: [ BaseThruster, ConstructibleMachine ]
-  components:
-  - type: Machine
-    board: ThrusterMachineCircuitboard
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 600
-      behaviors:
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-        - !type:PlaySoundBehavior
-          sound:
-            collection: MetalBreak
-        - !type:ChangeConstructionNodeBehavior
-          node: machineFrame
-  - type: Sprite
-    sprite: _Lua/Structures/Shuttles/thruster.rsi # Lua: use _Lua prefix
-    layers:
-    - state: base
-      map: ["enum.ThrusterVisualLayers.Base"]
-    - state: thrust
-      map: ["enum.ThrusterVisualLayers.ThrustOn"]
-      shader: unshaded
-      visible: false
-      color: "#4281de" # Lua
-    - state: thrust_burn_unshaded
-      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
-      shader: unshaded
-      visible: false
-      offset: 0, 1
-      color: "#4281de" # Lua
-  # Frontier: linkable thrusters, pirate bounties
-  - type: DeviceNetwork
-    deviceNetId: Wireless
-    receiveFrequencyId: BasicDevice
-  - type: WirelessNetworkConnection
-    range: 200
-  - type: DeviceLinkSink
-    ports:
-    - On
-    - Off
-    - Toggle
-  - type: PirateBountyItem
-    id: Thruster
-  # End Frontier
-  - type: RadarBlip # Mono
-    radarColor: "#99FF99"
-    scale: 1
-    shape: diamond
-
-- type: entity
-  id: ThrusterUnanchored
+  id: SmallThruster
   parent: Thruster
-  suffix: Unanchored
-  components:
-    - type: Transform
-      anchored: false
-    - type: Physics
-      bodyType: Dynamic
-
-- type: entity
-  id: DebugThruster
-  parent: BaseThruster
-  suffix: DEBUG
+  name: small thruster
   components:
   - type: Thruster
-    requireSpace: false
+    baseThrust: 33
+    thrust: 33
+    thrustPerPartLevel: [42.9, 56.1, 69.3, 82.5, 100]
+    damage:
+      types:
+        Heat: 40
+        Structural: 40
+  - type: ThermalSignature
   - type: ApcPowerReceiver
-    needsPower: false
-    powerLoad: 0
+    powerLoad: 500
   - type: Sprite
-    sprite: _Lua/Structures/Shuttles/thruster.rsi # Lua: use _Lua prefix
+    sprite: _Lua/Structures/Shuttles/thruster.rsi # Lua
     layers:
-    - state: base
+    - state: base_small
       map: ["enum.ThrusterVisualLayers.Base"]
-    - state: thrust
+    - state: thrust_small
       map: ["enum.ThrusterVisualLayers.ThrustOn"]
       shader: unshaded
       visible: false
@@ -160,156 +31,288 @@
       visible: false
       offset: 0, 1
       color: "#4281de" # Lua
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.45,0.35,0.45" # Thruster is slightly narrower than the big one but still long
+        density: 60 # Same density as big thruster, will be slightly lighter
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
+  - type: StaticPrice
+    price: 100
+  - type: Machine
+    board: SmallThrusterMachineCircuitboard
 
 - type: entity
-  id: Gyroscope
-  parent: [ BaseThruster, ConstructibleMachine ]
-  name: gyroscope
-  description: Increases the shuttle's potential angular rotation.
+  id: SmallGyroscope
+  parent: Gyroscope
+  name: small gyroscope
   components:
   - type: Thruster
     thrusterType: Angular
     requireSpace: false
-    baseThrust: 2000
-    thrust: 2000
-    machinePartThrust: Manipulator
-    thrustPerPartLevel: [2000, 2500, 3000, 3500, 4000] # Frontier: upgradable gyroscopes
+    baseThrust: 250
+    thrust: 250
+    thrustPerPartLevel: [250, 312.5, 375, 437.5, 460]
+    heatSignatureRatio: 0.5
+  - type: ApcPowerReceiver
+    powerLoad: 200
   - type: Sprite
-    # Listen I'm not the biggest fan of the sprite but it was the most appropriate thing I could find.
-    sprite: _NF/Structures/Shuttles/gyroscope.rsi # Frontier: add _NF prefix
-    snapCardinals: true
+    sprite: _NF/Structures/Shuttles/gyroscope.rsi
     layers:
-    - state: base
+    - state: base_small
       map: ["enum.ThrusterVisualLayers.Base"]
     - state: thrust
       map: ["enum.ThrusterVisualLayers.ThrustOn"]
       shader: unshaded
       visible: false
-    - state: thrust_burn
+    - state: thrust_burn_small
       map: [ "enum.ThrusterVisualLayers.Thrusting" ]
       visible: false
     - state: thrust_burn_unshaded
       map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
       shader: unshaded
       visible: false
-  - type: PointLight
-    radius: 1.3
-    energy: 0.8
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    offset: "0, 0.1" # shine from the top, not bottom of the computer
-    color: "#4246b3"
-  - type: Machine
-    board: GyroscopeMachineCircuitboard
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 300
-      behaviors:
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-        - !type:DoActsBehavior
-          acts: ["Destruction"]
-        - !type:PlaySoundBehavior
-          sound:
-            collection: MetalBreak
-        - !type:ChangeConstructionNodeBehavior
-          node: machineFrame
-  - type: UpgradePowerDraw
-    powerDrawMultiplier: 0.75
-    scaling: Exponential
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: Electronic
+  - type: Fixtures # Small gyro, small fixture
+    fixtures: &smallGyroFixtures
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 190
+        mask:
+        - SmallMobMask #this is so they can go under plastic flaps
+        layer:
+        - MachineLayer
   - type: StaticPrice
-    price: 300 # Frontier - 2000<300
-  - type: PirateBountyItem # Frontier
-    id: Gyroscope # Frontier
+    price: 100
+  - type: Machine
+    board: SmallGyroscopeMachineCircuitboard
 
+#region Security
 - type: entity
-  id: GyroscopeUnanchored
-  parent: Gyroscope
-  suffix: Unanchored
+  id: ThrusterSecurity
+  parent: Thruster
+  name: thruster
+  suffix: Security
   components:
-    - type: Transform
-      anchored: false
-    - type: Physics
-      bodyType: Dynamic
-
-- type: entity
-  id: DebugGyroscope
-  parent: BaseThruster
-  suffix: DEBUG
-  components:
-  - type: Thruster
-    thrusterType: Angular
-    requireSpace: false
-    baseThrust: 100
-    thrust: 100
-  - type: ApcPowerReceiver
-    needsPower: false
-    powerLoad: 0
   - type: Sprite
-    sprite: _NF/Structures/Shuttles/gyroscope.rsi # Frontier: add _NF prefix
-    snapCardinals: true
-    layers:
-    - state: base
+    sprite: _Lua/Structures/Shuttles/thruster.rsi # Lua
+    layers: &secThrusterLayers
+    - state: base_sec
       map: ["enum.ThrusterVisualLayers.Base"]
     - state: thrust
       map: ["enum.ThrusterVisualLayers.ThrustOn"]
       shader: unshaded
       visible: false
+      color: "#4281de" # Lua
     - state: thrust_burn_unshaded
       map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
       shader: unshaded
       visible: false
+      offset: 0, 1
+      color: "#4281de" # Lua
+  - type: Destructible
+    thresholds: &secDestructibleThresholds
+    - trigger:
+        !type:DamageTrigger
+        damage: 600  # Considering we need a lot of thrusters didn't want to make an individual one too tanky
+      behaviors:
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
+  - type: Machine
+    board: ThrusterSecurityMachineCircuitboard
 
 - type: entity
-  id: RustedThruster
-  parent: BaseStructureDynamic
-  name: rusted thruster
-  description: An unrepairable thruster, broken down from wear and tear. Only useful for scrapping.
+  id: DebugThrusterSecurity
+  parent: DebugThruster
+  name: thruster
+  suffix: DEBUG, Security
   components:
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.45,-0.45,0.45,0.45"
-          density: 60
-          mask:
-          - MachineMask
-          layer:
-          - MachineLayer
-    - type: Transform
-      anchored: true
-    - type: Physics
-      bodyType: Static
-    - type: Rotatable
-      rotateWhileAnchored: true
-    - type: Sprite
-      sprite: Structures/Shuttles/old_thruster.rsi
-      state: base
-    - type: Damageable
-      damageContainer: Inorganic
-      damageModifierSet: Electronic
-    - type: Destructible
-      thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 100  # Considering we need a lot of thrusters didn't want to make an individual one too tanky
-        behaviors:
-          - !type:DoActsBehavior
-            acts: ["Destruction"]
-          - !type:PlaySoundBehavior
-            sound:
-              collection: MetalBreak
-    - type: PhysicalComposition
-      materialComposition:
-        Steel: 1200 # 12 sheets
+  - type: Sprite
+    sprite: _Lua/Structures/Shuttles/thruster.rsi # Lua
+    layers: *secThrusterLayers
+  - type: Destructible
+    thresholds: *secDestructibleThresholds
+  - type: Machine
+    board: ThrusterSecurityMachineCircuitboard
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container # FIXME: Why do these need to be defined here?  What's missing?
+      machine_parts: !type:Container
+
+- type: entity
+  id: GyroscopeSecurity
+  parent: Gyroscope
+  suffix: Security
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    layers: &secGyroLayers
+    - state: base_sec
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_sec
+      map: [ "enum.ThrusterVisualLayers.Thrusting" ]
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+  - type: Machine
+    board: GyroscopeSecurityMachineCircuitboard
+
+- type: entity
+  id: DebugGyroscopeSecurity
+  parent: DebugGyroscope
+  name: gyroscope
+  suffix: DEBUG, Security
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    layers: *secGyroLayers
+  - type: Machine
+    board: GyroscopeSecurityMachineCircuitboard
+  - type: ContainerContainer
+    containers:
+      machine_board: !type:Container # FIXME: Why do these need to be defined here?  What's missing?
+      machine_parts: !type:Container
+
+- type: entity
+  id: SmallGyroscopeSecurity
+  parent: GyroscopeSecurity
+  name: small gyroscope
+  suffix: Security
+  components:
+  - type: Thruster
+    baseThrust: 250
+    thrust: 250
+    thrustPerPartLevel: [250, 312.5, 375, 437.5, 460]
+  - type: ApcPowerReceiver
+    powerLoad: 200
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    layers:
+    - state: base_small_sec
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_small_sec
+      map: [ "enum.ThrusterVisualLayers.Thrusting" ]
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+  - type: StaticPrice
+    price: 100
+  - type: Machine
+    board: SmallGyroscopeSecurityMachineCircuitboard
+  - type: Fixtures # Small gyro, small fixture
+    fixtures: *smallGyroFixtures
+
+#region NFSD
+- type: entity
+  id: ThrusterNfsd
+  parent: ThrusterSecurity
+  suffix: NFSD
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Shuttles/thruster.rsi # Lua
+    layers: &nfsdThrusterLayers
+    - state: base_nfsd
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+      color: "#4281de" # Lua
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+      color: "#4281de" # Lua
+  - type: Machine
+    board: ThrusterNfsdMachineCircuitboard
+
+- type: entity
+  id: DebugThrusterNfsd
+  parent: DebugThrusterSecurity
+  suffix: DEBUG, NFSD
+  components:
+  - type: Sprite
+    sprite: _Lua/Structures/Shuttles/thruster.rsi # Lua
+    layers: *nfsdThrusterLayers
+  - type: Machine
+    board: ThrusterNfsdMachineCircuitboard
+
+- type: entity
+  id: GyroscopeNfsd
+  parent: GyroscopeSecurity
+  suffix: NFSD
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    layers: &nfsdGyroLayers
+    - state: base_nfsd
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_nfsd
+      map: [ "enum.ThrusterVisualLayers.Thrusting" ]
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+  - type: Machine
+    board: GyroscopeNfsdMachineCircuitboard
+
+- type: entity
+  id: DebugGyroscopeNfsd
+  parent: DebugGyroscopeSecurity
+  suffix: DEBUG, NFSD
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    layers: *nfsdGyroLayers
+    snapCardinals: true
+  - type: Machine
+    board: GyroscopeNfsdMachineCircuitboard
+
+- type: entity
+  id: SmallGyroscopeNfsd
+  parent: SmallGyroscopeSecurity
+  name: small gyroscope
+  suffix: NFSD
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Shuttles/gyroscope.rsi
+    layers:
+    - state: base_small_nfsd
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_small_nfsd
+      map: [ "enum.ThrusterVisualLayers.Thrusting" ]
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+  - type: Machine
+    board: SmallGyroscopeNfsdMachineCircuitboard
