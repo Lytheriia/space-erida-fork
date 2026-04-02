@@ -1,78 +1,95 @@
-## Role Loadouts
-
+# Medical
 - type: roleLoadout
   id: JobChiefMedicalOfficer
   groups:
+  - Werx-CMO #erida
+  - Niz-CMO #erida
+  - Socks-CMO #erida
   - GroupTankHarness
   - ChiefMedicalOfficerHead
   - MedicalMask
   - ChiefMedicalOfficerJumpsuit
+  - MedicalGloves
   - MedicalBackpack
   - ChiefMedicalOfficerOuterClothing
   - ChiefMedicalOfficerNeck
   - ChiefMedicalOfficerShoes
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-#  - ChiefMedicalOfficerJobTrinkets
+  # - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalDoctor
   groups:
+  - Werx-Doctor #erida
+  - Niz-Doctor #erida
+  - Socks-Doctor #erida
   - GroupTankHarness
   - MedicalDoctorHead
   - MedicalMask
   - MedicalDoctorJumpsuit
+  - MedicalGloves
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
   - MedicalDoctorPDA
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-#  - MedicalDoctorJobTrinkets
+  # - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalIntern
   groups:
+  - Werx-Intern #erida
+  - Niz-Intern #erida
+  - Socks-Intern #erida
   - GroupTankHarness
   - MedicalInternJumpsuit
   - MedicalBackpack
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-#  - MedicalInternJobTrinkets
+  # - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobChemist
   groups:
+  - Werx-Chemist #erida
+  - Niz-Chemist #erida
+  - Socks-Chemist #erida
   - GroupTankHarness
   - MedicalMask
   - ChemistJumpsuit
+  - MedicalGloves
   - ChemistBackpack
   - ChemistOuterClothing
   - MedicalShoes
-  - Glasses
   - SurvivalMedical
   - Trinkets
-#  - ChemistJobTrinkets
+  # - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobParamedic
   groups:
+  - Werx-Paramedic #erida
+  - Niz-Paramedic #erida
+  - Socks-Paramedic #erida
   - GroupTankHarness
   - ParamedicHead
   - MedicalMask
   - ParamedicJumpsuit
+  - MedicalGloves
   - MedicalBackpack
   - ParamedicOuterClothing
   - ParamedicShoes
-  - Glasses
+  - MedicalEyewear
   - SurvivalMedical
   - Trinkets
-#  - ParamedicJobTrinkets
+  # - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical

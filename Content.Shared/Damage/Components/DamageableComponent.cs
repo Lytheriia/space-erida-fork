@@ -2,6 +2,7 @@ using Content.Shared._Lavaland.Anger.Systems;
 using Content.Shared._Lavaland.MobPhases;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
+using Content.Shared.EntityConditions.Conditions;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
 using Content.Shared.StatusIcon;
@@ -49,7 +50,7 @@ public sealed partial class DamageableComponent : Component
     ///     If this data-field is specified, this allows damageable components to be initialized with non-zero damage.
     /// </remarks>
     [DataField]
-    [Access(typeof(DamageableSystem), Other = AccessPermissions.None)]
+    [Access([typeof(DamageableSystem), typeof(DamageTypeEntityConditionSystem), typeof(TotalDamageEntityConditionSystem)], Other = AccessPermissions.None)]
     public DamageSpecifier Damage = new();
 
     /// <summary>
@@ -68,7 +69,7 @@ public sealed partial class DamageableComponent : Component
     /// </summary>
     /// Lavaland access edit
     [ViewVariables]
-    [Access([typeof(DamageableSystem), typeof(AngerSystem), typeof(MobPhasesSystem)], Other = AccessPermissions.None)]
+    [Access([typeof(DamageableSystem), typeof(AngerSystem), typeof(MobPhasesSystem), typeof(TotalDamageEntityConditionSystem)], Other = AccessPermissions.None)]
     public FixedPoint2 TotalDamage;
 
     [DataField("radiationDamageTypes")]
