@@ -1,6 +1,7 @@
 - type: markingsGroup
   parent: Undergarments
   id: Arachnid
+  # onlyGroupWhitelisted: true Erida edit
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 0

@@ -5,6 +5,7 @@ using Content.Client.DebugMon;
 using Content.Client._Erida.TTS;
 using Content.Client.Options;
 using Content.Client.Eui;
+using Content.Client.FeedbackPopup;
 using Content.Client.Fullscreen;
 using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;

@@ -116,12 +116,12 @@
   - type: PassiveDamage # Around 8 damage a minute healed
     allowedStates:
     - Alive
-    damageCap: 65
     damage:
       types:
         Heat: -0.14
-      groups:
-        Brute: -0.14
+        Blunt: -0.05
+        Piercing: -0.05
+        Slash: -0.05
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -173,9 +173,10 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
+  # Erida start
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
+  - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
     - Slime
@@ -183,6 +184,7 @@
     - TauCetiBasic
     - Slime
   - type: Carriable
+  # Erida end
 
 - type: entity
   parent: OrganBase

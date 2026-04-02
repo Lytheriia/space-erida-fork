@@ -76,6 +76,7 @@
           - MobLayer
   - type: TypingIndicator
     proto: gingerbread
+  # Erida start
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
   - type: LanguageKnowledge #backmen: languages
@@ -86,6 +87,7 @@
     - TauCetiBasic
     - SpaceMob
   - type: Carriable
+  # Erida end
 
 - type: entity
   parent: OrganBase

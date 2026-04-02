@@ -9,7 +9,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Numerics;
-using Content.Shared.Humanoid.Prototypes;
 
 namespace Content.Client.Body;
 

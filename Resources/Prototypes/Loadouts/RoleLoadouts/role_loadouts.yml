@@ -29,6 +29,7 @@
   - Glasses
   - Survival
   - Trinkets
+  #- HoPJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -263,7 +264,6 @@
   - MimeOuterClothing
   - MimeBelt
   - Glasses
-  - SurvivalMime
   - Trinkets
   #- MimeJobTrinkets
   - GroupSpeciesBreathTool
@@ -370,7 +370,6 @@
   - TechnicalAssistantJumpsuit
   - StationEngineerBackpack
   - Trinkets
-  - SurvivalExtended
   #- TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -388,8 +387,7 @@
   - StationEngineerShoes
   - StationEngineerID
   - Trinkets
-  - SurvivalExtended
- #- StationEngineerJobTrinkets
+  #- StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
@@ -672,6 +670,8 @@
   - Socks-Reporter #erida
   - GroupTankHarness
   - ReporterJumpsuit
+  - ReporterHead
+  - ReporterOuterClothing
   - CommonBackpack
   - Glasses
   - Survival

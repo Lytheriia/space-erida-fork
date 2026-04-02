@@ -93,9 +93,10 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+  # Erida start
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
+  - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
     - SolCommon
@@ -103,6 +104,7 @@
     - TauCetiBasic
     - SolCommon
   - type: Carriable
+  # Erida end
 
 - type: entity
   parent: OrganBase

@@ -68,7 +68,7 @@
   - AppearanceDiona
   - BaseSpeciesMobOrganic
   id: MobDiona
-  name: McUrist Plants
+  name: Urist McPlants
   components:
   - type: Respirator
     damage:
@@ -171,13 +171,15 @@
   - type: Rootable
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
-  - type: LanguageKnowledge #backmen: languages
+  # Erida start
+  - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
     - RootSpeak
     understands:
     - TauCetiBasic
     - RootSpeak
+  # Erida end
   - type: Carriable
 
 - type: entity

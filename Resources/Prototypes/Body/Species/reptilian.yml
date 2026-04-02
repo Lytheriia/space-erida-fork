@@ -118,7 +118,7 @@
   - AppearanceReptilian
   - BaseSpeciesMobOrganic
   id: MobReptilian
-  name: Urissst Mz'Hand
+  name: Urist McScales
   components:
   - type: Puller
     needsHands: false
@@ -170,6 +170,7 @@
       295: 0.8
       285: 0.7
   - type: Wagging
+  # Erida start
   - type: LanguageSpeaker
     currentLanguage: TauCetiBasic
   - type: LanguageKnowledge #backmen: languages
@@ -180,6 +181,7 @@
     - TauCetiBasic
     - Dragon
   - type: Carriable
+  # Erida end
 
 - type: entity
   parent: OrganBase
