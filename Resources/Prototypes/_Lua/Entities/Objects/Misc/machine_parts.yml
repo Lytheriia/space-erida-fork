@@ -7,7 +7,6 @@
   description: A purspace capacitor used in the construction of a variety of devices.
   suffix: Rating 5
   components:
-    - type: LuaTech
     - type: Sprite
       sprite: _Lua/Objects/Misc/stock_parts.rsi
       state: pur_capacitor
@@ -27,7 +26,6 @@
   description: A purspace manipulator used in the construction of a variety of devices.
   suffix: Rating 5
   components:
-    - type: LuaTech
     - type: Sprite
       sprite: _Lua/Objects/Misc/stock_parts.rsi
       state: pur_mani
@@ -47,7 +45,6 @@
   description: A purspace matter bin used in the construction of a variety of devices.
   suffix: Rating 5
   components:
-    - type: LuaTech
     - type: Sprite
       sprite: _Lua/Objects/Misc/stock_parts.rsi
       state: pur_matter_bin

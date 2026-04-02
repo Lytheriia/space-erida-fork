@@ -11,7 +11,6 @@
       types:
         Heat: 40
         Structural: 40
-  - type: ThermalSignature
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -51,10 +50,6 @@
       visible: false
       offset: 0, 1
       color: "#C4511C"
-  - type: RadarBlip # Mono
-    radarColor: "#99FF99"
-    scale: 0.3
-    shape: diamond
 
 - type: entity
   id: ThrusterLua
@@ -62,7 +57,6 @@
   name: ракетный двигатель
   suffix: LuaTech, Луа, Тир 5
   components:
-  - type: LuaTech
   - type: Machine
     board: ThrusterLuaMachineCircuitboard
   - type: Sprite
@@ -109,7 +103,6 @@
   parent: [ThrusterLua, ThrusterPirates]
   suffix: LuaTech, Луа, Тир 1
   components:
-  - type: LuaTech
   - type: Machine
     board: ThrusterLuaBuildMachineCircuitboard
 
@@ -147,7 +140,6 @@
   suffix: LuaTech, Луа, Тир 5, Магнитный
   parent: [BaseThruster, ConstructibleMachine]
   components:
-  - type: LuaTech
   - type: Tag
     tags:
     - OmniBurnAlwaysOn
@@ -184,10 +176,6 @@
         - MachineMask
         layer:
         - MachineLayer
-  - type: RadarBlip
-    radarColor: "#99FF99"
-    scale: 1.2
-    shape: diamond
   - type: Machine
     board: OmnidirectionalThrusterMachineCircuitboard
   - type: ApcPowerReceiver
@@ -203,7 +191,6 @@
       types:
         Heat: 40
         Structural: 40
-  - type: ThermalSignature
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
@@ -285,10 +272,6 @@
     flags: None
   - type: StaticPrice
     price: 1500
-  - type: RadarBlip
-    radarColor: "#99FF99"
-    scale: 1.2
-    shape: diamond
 # END
 
 # MARK: Large Thruster
@@ -351,7 +334,3 @@
     flags: None
   - type: StaticPrice
     price: 5000
-  - type: RadarBlip
-    radarColor: "#99FF99"
-    scale: 1.5
-    shape: diamond

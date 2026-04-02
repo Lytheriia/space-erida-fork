@@ -12,7 +12,6 @@
       types:
         Heat: 40
         Structural: 40
-  - type: ThermalSignature
   - type: ApcPowerReceiver
     powerLoad: 500
   - type: Sprite
