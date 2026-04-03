@@ -239,7 +239,6 @@
     Meaterial: 200
 
 - type: latheRecipe
-  abstract: true # Frontier: replaced by NFSheetPaperFromWood
   id: SheetPaper
   result: SheetPaper1
   completetime: 1
