@@ -13,8 +13,6 @@
   - ModularReceiver
   - MicroManipulatorStockPart
   - ConveyorBeltAssembly
-  - MicroManipulatorT2 # Erida-start
-  - MicroManipulatorT3 # Erida-end
 
 - type: latheRecipePack
   id: LightsStatic

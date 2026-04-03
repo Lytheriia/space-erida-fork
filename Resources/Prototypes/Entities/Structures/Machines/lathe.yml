@@ -194,6 +194,10 @@
     - ChemistryStatic
     - SurgeryStatic
     # dynamicPacks: # Backmen-EDIT
+    # Erida start
+    - PartsT2
+    - PartsT3
+    # Erida stop
     - AdvancedTools
     - ScienceEquipment
     - ScienceExplosives
