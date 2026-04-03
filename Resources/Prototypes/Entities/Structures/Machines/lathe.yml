@@ -396,6 +396,7 @@
     - SecurityPracticeStatic
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
+    - RPED
     # dynamicPacks: # Backmen-EDIT
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
