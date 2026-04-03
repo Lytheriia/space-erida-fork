@@ -24,3 +24,12 @@
   id: MicroManipulatorStockPart
   result: MicroManipulatorStockPart
 
+- type: latheRecipe
+  parent: BaseStockPartRecipe
+  id: MatterBinStockPart
+  result: MatterBinStockPart
+
+- type: latheRecipe
+  parent: BaseStockPartRecipe
+  id: CapacitorStockPart
+  result: CapacitorStockPart
