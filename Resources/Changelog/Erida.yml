@@ -254,3 +254,12 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/307
   avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
   title: Some Changes
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: ползунок для регулирования громкости музыки
+  id: 21
+  time: '2026-04-04T21:55:10.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/308
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Volume for JukeBox
