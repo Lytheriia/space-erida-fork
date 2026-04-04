@@ -223,3 +223,34 @@ Entries:
   url: https://github.com/dead-space-server/space-erida-14/pull/305
   avatar_url: https://avatars.githubusercontent.com/u/183598448?v=4
   title: Lavatweaks
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: ПНВ и термалы у очков ниндзя
+    - type: Add
+      message: Дракон и ревенант теперь имеют вшитый ПНВ
+    - type: Tweak
+      message: Невидимость у ниндзи, стелс коробки и ксеноборгов теперь полная
+    - type: Tweak
+      message: >-
+        Дракону возвращены показатели замедления от урона до апстримовские (литл
+        бафф)
+    - type: Tweak
+      message: В 2 раза уменьшены стоимости исследований ПНВ и Термалов в НИО
+    - type: Tweak
+      message: В 2 раза уменьшено необходимое время для создания ПНВ и Термалов
+    - type: Tweak
+      message: >-
+        Изменена стоимость термалов для протолата, теперь нужно поменьше
+        ресурсов
+    - type: Fix
+      message: >-
+        Исправлены показатели брони у капюшонов исследовательских костюмов (губы
+        момент)
+    - type: Remove
+      message: Убраны из утильмага ПНВ и Луноходы
+  id: 20
+  time: '2026-04-04T11:56:07.0000000+00:00'
+  url: https://github.com/dead-space-server/space-erida-14/pull/307
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Some Changes
